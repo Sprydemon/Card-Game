@@ -1,0 +1,414 @@
+#:kivy 1.10.0
+#:import board_width dimensions.board_width
+#:import board_height dimensions.board_height
+#:import screen_width dimensions.screen_width_kv
+#:import screen_height dimensions.screen_height_kv
+#:import board_width_pos dimensions.board_width_pos
+
+<game_board>:
+    canvas:
+
+        Color:
+            rgba: 0.8,1,1,1
+
+        Rectangle: # Game board
+            pos:board_width_pos,0
+            size: board_width, board_height
+
+#########################################################################################################################################
+        Color:
+            rgb:0,1,0
+
+        Rectangle: # Player zone
+            pos:board_width_pos,0
+            size: board_width, board_height/5
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Player reival zone
+            width: 1
+            rectangle: (board_width_pos, 0, board_width/3, board_height/5)
+
+        Rectangle: # Player 1st reival
+            pos: board_width_pos+board_width/(board_width/5), board_height/45
+            size: board_width/3.0857, board_height/27
+
+        Rectangle: # Player 2nd reival
+            pos: board_width_pos+board_width/(board_width/5), board_height/12.27
+            size: board_width/3.0857, board_height/27
+
+        Rectangle: # Player 3rd reival
+            pos: board_width_pos+board_width/(board_width/5), board_height/7.1
+            size: board_width/3.0857, board_height/27
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Player deck zone
+            width: 1
+            rectangle: (board_width_pos+board_width-board_width/6, 0, board_width/6, board_height/5)
+
+        Line: # Player deck
+            width: 1
+            rectangle: (board_width_pos+board_width-board_width/6+board_width/72, board_height/135, board_width/6-board_width/36, board_height/5-board_height/67.5)
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Player main peices zone
+            width: 1
+            rectangle: (board_width_pos+board_width/3, 0, board_width/2, board_height/5)
+
+        Color:
+            rgba: 0,0.4,0,1
+
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/15.88 , board_height/8.5
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/15.88 , board_height/8.5
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/5.8 , board_height/8.5
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/5.8 , board_height/8.5
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/3.55 , board_height/8.5
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/3.55 , board_height/8.5
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/2.559 , board_height/8.5
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/2.559 , board_height/8.5
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/11 , board_height/27.69
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/11 , board_height/27.69
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/4.4 , board_height/27.69
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/4.4 , board_height/27.69
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/2.75 , board_height/27.69
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/3)+board_width/2.75 , board_height/27.69
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+#########################################################################################################################################
+#########################################################################################################################################
+        Color:
+            rgb:0,1,0
+
+        Rectangle: # Opponent Zone
+            pos:board_width_pos,board_height-board_height/5
+            size: board_width, board_height/5
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Opponent reival zone
+            width: 1
+            rectangle: (board_width_pos+board_width-board_width/3, board_height-board_height/5, board_width/3, board_height/5)
+
+        Rectangle: # Opponent 1st reival
+            pos: board_width_pos+board_width-board_width/3+board_width/(board_width/5), board_height-board_height/5+board_height/45
+            size: board_width/3.0857, board_height/27
+
+        Rectangle: # Opponent 2nd reival
+            pos: board_width_pos+board_width-board_width/3+board_width/(board_width/5), board_height-board_height/5+board_height/12.27
+            size: board_width/3.0857, board_height/27
+
+        Rectangle: # Opponent 3rd reival
+            pos: board_width_pos+board_width-board_width/3+board_width/(board_width/5), board_height-board_height/5+board_height/7.1
+            size: board_width/3.0857, board_height/27
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line:# Opponent deck zone
+            width: 1
+            rectangle: (board_width_pos, board_height-board_height/5, board_width/6, board_height/5)
+
+        Line: # Opponent deck
+            width: 1
+            rectangle: (board_width_pos+board_width/72, board_height-board_height/5+board_height/135, board_width/6-board_width_pos/36, board_height/5-board_height/67.5)
+
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+        Color
+            rgba: 0, 0, 0, 1
+
+        Line: # Opponent main peices zone
+            width: 1
+            rectangle: (board_width_pos+board_width/6, board_height-board_height/5, board_width/2, board_height/5)
+
+        Color:
+            rgba: 0,0.4,0,1
+
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+68 , board_height-board_height/6.1
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+68 , board_height-board_height/6.1
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+186 , board_height-board_height/6.1
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+186 , board_height-board_height/6.1
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+304 , board_height-board_height/6.1
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+304 , board_height-board_height/6.1
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+422 , board_height-board_height/6.1
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+422 , board_height-board_height/6.1
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+97.5 , board_height-board_height/12.1
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+97.5 , board_height-board_height/12.1
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+245 , board_height-board_height/12.1
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+245 , board_height-board_height/12.1
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+392.5 , board_height-board_height/12.1
+            size:board_width/21.6,board_height/21.6
+        Ellipse:
+            pos:(board_width_pos+board_width/6)+392.5 , board_height-board_height/12.1
+            size:board_width/21.6,board_height/21.6
+            source:r"C:\Users\salam\Downloads\summon_circle.png"
+
+#########################################################################################################################################
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Conecting lines bottom
+            width: 2.5
+            rectangle: ((board_width_pos+board_width/5),board_height/5+24, (board_width-2*(board_width/5)),5)
+
+        Line: # Conecting lines mid
+            width: 2.5
+            rectangle: ((board_width_pos+board_width/5),board_height/2, (board_width-2*(board_width/5)),5)
+
+        Line: # Conecting lines top
+            width: 2.5
+            rectangle: ((board_width_pos+board_width/5),(board_height/5)*4-24, (board_width-2*(board_width/5)),5)
+
+#########################################################################################################################################
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # line left
+            width: 2.5
+            rectangle: ((board_width_pos+board_width/5)-1.25,board_height/5+24, 5,600)
+        
+        Color:
+            rgba: 1,0.65,0.4,1
+
+        Ellipse:
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+152.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+237.5
+            size:board_width/27,board_height/27
+
+
+        Ellipse:
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+322.5
+            size:board_width/27,board_height/27
+
+
+        Ellipse:
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+407.5
+            size:board_width/27,board_height/27
+
+#########################################################################################################################################
+        Color:# line mid
+            rgba: 0, 0, 0, 1
+
+        Line:
+            width: 2.5
+            rectangle: ((board_width_pos+board_width/2)-1.25,board_height/5+24, 5,600)
+
+        Color:
+            rgba: 1,0.65,0.4,1
+
+        Ellipse:
+            pos:(board_width_pos+board_width/2)-18.75,(board_height/5+24)-20
+            size:board_width/27,board_height/27
+        
+        Ellipse:
+            pos:(board_width_pos+board_width/2)-18.75,(board_height/5+24)+67.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/2)-18.75,(board_height/5+24)+152.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/2)-18.75,(board_height/5+24)+237.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/2)-18.75,(board_height/5+24)+322.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/2)-18.75,(board_height/5+24)+407.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/2)-18.75,(board_height/5+24)+492.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/2)-18.75,(board_height/5+24)+580
+            size:board_width/27,board_height/27
+
+#########################################################################################################################################
+        Color:# line right
+            rgba: 0, 0, 0, 1
+
+        Line:
+            width: 2.5
+            rectangle: ((board_width_pos+board_width/5*4)-1.25,board_height/5+24, 5,600)
+        
+        Color:
+            rgba: 1,0.65,0.4,1
+
+        Ellipse:
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+152.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+237.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+322.5
+            size:board_width/27,board_height/27
+
+        Ellipse:
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+407.5
+            size:board_width/27,board_height/27
+
+#########################################################################################################################################
+        Color:
+            rgb:1,0,0
+            
+        Ellipse: # attack spots left down
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)-20
+            size:board_width/27,board_height/27
+            source:r"C:\Users\salam\Downloads\sword (4).png"
+
+        Ellipse: # attack spots left up
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+580
+            size:board_width/27,board_height/27
+            source:r"C:\Users\salam\Downloads\uprigtht_sword.png"
+            
+        Ellipse: # attack spots right down
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)-20
+            size:board_width/27,board_height/27
+            source:r"C:\Users\salam\Downloads\sword (4).png"
+
+        Ellipse: # attack spots right up
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+580
+            size:board_width/27,board_height/27
+            source:r"C:\Users\salam\Downloads\uprigtht_sword.png"
+
+#########################################################################################################################################
+
+        Color:
+            rgba: 1,1,0.8,1
+
+        Ellipse: # summon spots left down
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+67.5
+            size:board_width/27,board_height/27
+        Ellipse:
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+67.5
+            size:board_width/27,board_height/27
+            source:r"C:\Users\salam\Downloads\spiral_illusion.png"
+
+        Ellipse: # summon spots left up
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+492.5
+            size:board_width/27,board_height/27
+        Ellipse:
+            pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+492.5
+            size:board_width/27,board_height/27
+            source:r"C:\Users\salam\Downloads\spiral_illusion.png"
+
+        Ellipse: # summon spots right down
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+67.5
+            size:board_width/27,board_height/27
+        Ellipse:
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+67.5
+            size:board_width/27,board_height/27
+            source:r"C:\Users\salam\Downloads\spiral_illusion.png"
+
+        Ellipse: # summon spots right up
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+492.5
+            size:board_width/27,board_height/27
+        Ellipse:
+            pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+492.5
+            size:board_width/27,board_height/27
+            source:r"C:\Users\salam\Downloads\spiral_illusion.png"
