@@ -1,0 +1,434 @@
+#:kivy 1.10.0
+
+#:import hand_1 deck.hand_1
+#:import hand_2 deck.hand_2
+#:import hand_3 deck.hand_3
+#:import hand_4 deck.hand_4
+<game_board>:
+    canvas:
+    
+
+        Color:
+            rgba: 0.8,1,1,1
+
+        Rectangle: # Game board
+            pos:self.width/5,0
+            size: 3*self.width/5, self.height          
+
+#########################################################################################################################################
+        Color:
+            rgb:0,1,0
+
+        Rectangle: # Player zone
+            pos:self.width/5,0
+            size: 3*self.width/5, self.height/5
+            
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Player reival zone
+            width: 1
+            rectangle: (self.width/5, 0, 3*self.width/5/3, self.height/5)
+
+        Rectangle: # Player 1st reival
+            pos: self.width/5, self.height/45
+            size: 3*self.width/5/3, self.height/27
+
+        Rectangle: # Player 2nd reival
+            pos: self.width/5, self.height/12.27
+            size: 3*self.width/5/3, self.height/27
+
+        Rectangle: # Player 3rd reival
+            pos: self.width/5, self.height/7.1
+            size: 3*self.width/5/3, self.height/27
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Player deck zone
+            width: 1
+            rectangle: (self.width/5+3*self.width/5-3*self.width/5/6, 0, 3*self.width/5/6, self.height/5)
+
+        Color:
+            rgb: 1,1,1
+        Rectangle: # Player deck
+            pos: self.width/5+3*self.width/5-3*self.width/5/6+3*self.width/5/72, 0
+            size: 3*self.width/5/6-3*self.width/5/36, self.height/5-self.height/self.height/16
+            source:r"Card Game\Images\card_sleeve.png"
+      
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Player main peices zone
+            width: 1
+            rectangle: (self.width/5+3*self.width/5/3, 0, 3*self.width/5/2, self.height/5)
+
+        Color:
+            rgba: 0,0.4,0,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/15.88 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/15.88 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/5.8 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/5.8 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/3.55 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/3.55 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/2.559 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/2.559 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/11 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/11 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/4.4 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/4.4 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/2.75 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/2.75 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+#########################################################################################################################################
+#########################################################################################################################################
+        Color:
+            rgb:0,1,0
+
+        Rectangle: # Opponent Zone
+            pos:self.width/5,self.height-self.height/5
+            size: 3*self.width/5, self.height/5
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Opponent reival zone
+            width: 1
+            rectangle: (self.width/5+3*self.width/5-3*self.width/5/3, self.height-self.height/5, 3*self.width/5/3, self.height/5)
+
+        Rectangle: # Opponent 1st reival
+            pos: self.width/5+3*self.width/5-3*self.width/5/3, self.height-self.height/5+self.height/45
+            size: 3*self.width/5/3, self.height/27
+
+        Rectangle: # Opponent 2nd reival
+            pos: self.width/5+3*self.width/5-3*self.width/5/3, self.height-self.height/5+self.height/12.27
+            size: 3*self.width/5/3, self.height/27
+
+        Rectangle: # Opponent 3rd reival
+            pos: self.width/5+3*self.width/5-3*self.width/5/3, self.height-self.height/5+self.height/7.1
+            size: 3*self.width/5/3, self.height/27
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line:# Opponent deck zone
+            width: 1
+            rectangle: (self.width/5, self.height-self.height/5, 3*self.width/5/6, self.height/5)
+
+        Color:
+            rgb: 1,1,1
+        Rectangle: # Opponent deck
+            pos: self.width/5+3*self.width/5/72, self.height-self.height/5-self.height/self.height/16
+            size: 3*self.width/5/6-3*self.width/5/36, self.height/5-self.height/self.height/16
+            source:r"Card Game\Images\card_sleeve.png"
+
+##################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+        Color
+            rgba: 0, 0, 0, 1
+
+        Line: # Opponent main peices zone
+            width: 1
+            rectangle: (self.width/5+3*self.width/5/6, self.height-self.height/5, 3*self.width/5/2, self.height/5)
+
+        Color:
+            rgba: 0,0.4,0,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/28.2352941176 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/28.2352941176  , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/10.3225806452 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/10.3225806452 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/6.31578947368 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/6.31578947368 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/4.54976303318 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/4.54976303318 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/19.6923076923 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/19.6923076923 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/7.83673469388 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/7.83673469388 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/4.89171974522 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/4.89171974522 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Card Game\Images\summon_circle.png"
+
+#########################################################################################################################################
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Conecting lines bottom
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5),self.height/5+self.height/45, (3*self.width/5-2*(3*self.width/5/5)),5)
+
+        Line: # Conecting lines mid
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5),self.height/2, (3*self.width/5-2*(3*self.width/5/5)),5)
+
+        Line: # Conecting lines top
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5),(self.height/5)*4-self.height/45, (3*self.width/5-2*(3*self.width/5/5)),5)
+
+#########################################################################################################################################
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # line left
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5)-self.width/1536,self.height/5+self.height/45, 5,self.height/1.8)
+        
+        Color:
+            rgba: 1,0.65,0.4,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/7.08196721311
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/4.54736842105
+            size:3*self.width/5/27,self.height/27
+
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/3.3488372093
+            size:3*self.width/5/27,self.height/27
+
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.65030674847
+            size:3*self.width/5/27,self.height/27
+
+#########################################################################################################################################
+        Color:# line mid
+            rgba: 0, 0, 0, 1
+
+        Line:
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/2)-self.width/1536,self.height/5+self.height/45, 5,self.height/1.8)
+
+        Color:
+            rgba: 1,0.65,0.4,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)-self.height/54
+            size:3*self.width/5/27,self.height/27
+        
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/7.08196721311
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/4.54736842105
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/3.3488372093
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.65030674847
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/1.86206896552
+            size:3*self.width/5/27,self.height/27
+
+#########################################################################################################################################
+        Color:# line right
+            rgba: 0, 0, 0, 1
+
+        Line:
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5*4)-self.width/1536,self.height/5+self.height/45, 5,self.height/1.8)
+        
+        Color:
+            rgba: 1,0.65,0.4,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/7.08196721311
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/4.54736842105
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/3.3488372093
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.65030674847
+            size:3*self.width/5/27,self.height/27
+
+#########################################################################################################################################
+        Color:
+            rgb:1,0,0
+            
+        Ellipse: # attack spots left down
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)-self.height/54
+            size:3*self.width/5/27,self.height/27
+            source:r"Card Game\Images\sword (4).png"
+
+        Ellipse: # attack spots left up
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/1.86206896552
+            size:3*self.width/5/27,self.height/27
+            source:r"Card Game\Images\uprigtht_sword.png"
+            
+        Ellipse: # attack spots right down
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)-self.height/54
+            size:3*self.width/5/27,self.height/27
+            source:r"Card Game\Images\sword (4).png"
+
+        Ellipse: # attack spots right up
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/1.86206896552
+            size:3*self.width/5/27,self.height/27
+            source:r"Card Game\Images\uprigtht_sword.png"
+
+#########################################################################################################################################
+
+        Color:
+            rgba: 1,1,0.8,1
+
+        Ellipse: # summon spots left down
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+            source:r"Card Game\Images\spiral_illusion.png"
+
+        Ellipse: # summon spots left up
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+            source:r"Card Game\Images\spiral_illusion.png"
+
+        Ellipse: # summon spots right down
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+            source:r"Card Game\Images\spiral_illusion.png"
+
+        Ellipse: # summon spots right up
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+            source:r"Card Game\Images\spiral_illusion.png"
+
+#########################################################################################################################################
+
+        Rectangle: # hand
+            pos:self.width/106.666666667,0
+            size: self.width/12.8,self.height/5.4
+            source: hand_1
+
+        Rectangle: # hand
+            pos:2*self.width/106.666666667 + self.width/12.8,0
+            size: self.width/12.8,self.height/5.4
+            source: hand_2
