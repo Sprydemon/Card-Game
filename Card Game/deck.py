@@ -59,10 +59,6 @@ class Hand:
             cards_num -= 1
 
 player = Hand(player_deck)
-player.draw()
-player.draw()
-hand_1 = player.stored[0]
-hand_2 = player.stored[1]
-hand_3 = player.stored[2]
-hand_4 = player.stored[3]
+player.shuffle()
+
 

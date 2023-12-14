@@ -1,0 +1,50 @@
+from kivy.app import App
+from kivy.app import App
+from kivy.uix.floatlayout import FloatLayout
+import dimensions
+from kivy.core.window import Window
+from deck import player
+import pyautogui
+from charecter import Charecter
+
+global right_lane
+right_lane = ["x", "x", "x", "x", "x", "x", "x", "x"]
+global left_lane
+left_lane = ["x", "x", "x", "x", "x", "x", "x", "x"]
+global mid_lane
+mid_lane = ["x", "x", "x", "x", "x", "x", "x", "x"]
+
+
+swordman = Charecter(10, 10, 9999, 0, "player")
+
+
+class game_board(FloatLayout):
+
+
+    def on_touch_down(self, touch):
+# hand
+        p = pyautogui.position()
+        if p[0] > Window.width/5+3*Window.width/5-3*Window.width/5/6+3*Window.width/5/72 and p[0] < Window.width/5+3*Window.width/5-3*Window.width/5/6+3*Window.width/5/72 + 3*Window.width/5/6-3*Window.width/5/36 and Window.height - p[1] > 0 and Window.height - p[1] < Window.height/5-Window.height/Window.height/16:
+            player.draw()
+            self.ids.hand_one.source = player.stored[0]
+            self.ids.hand_two.source = player.stored[1]
+            self.ids.hand_three.source = player.stored[2]
+            self.ids.hand_four.source = player.stored[3]
+            print(player.stored[0])
+            print(player.stored[1])
+            print(player.stored[2])
+            print(player.stored[3])
+
+
+class PongApp(App):
+    def build(self):
+        self.width = Window.width
+        self.height = Window.height
+        return game_board()
+
+
+if __name__ == '__main__':
+    print(dimensions.screen_width)
+    PongApp().run()
+
+

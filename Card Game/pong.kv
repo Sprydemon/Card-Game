@@ -1,9 +1,7 @@
 #:kivy 1.10.0
+#:import player_hand deck.player
 
-#:import hand_1 deck.hand_1
-#:import hand_2 deck.hand_2
-#:import hand_3 deck.hand_3
-#:import hand_4 deck.hand_4
+
 <game_board>:
     canvas:
     
@@ -52,12 +50,12 @@
             width: 1
             rectangle: (self.width/5+3*self.width/5-3*self.width/5/6, 0, 3*self.width/5/6, self.height/5)
 
-        Color:
-            rgb: 1,1,1
-        Rectangle: # Player deck
-            pos: self.width/5+3*self.width/5-3*self.width/5/6+3*self.width/5/72, 0
-            size: 3*self.width/5/6-3*self.width/5/36, self.height/5-self.height/self.height/16
-            source:r"Card Game\Images\card_sleeve.png"
+        # Color:
+        #     rgb: 1,1,1
+        # Rectangle: # Player deck
+        #     pos: self.width/5+3*self.width/5-3*self.width/5/6+3*self.width/5/72, 0
+        #     size: 3*self.width/5/6-3*self.width/5/36, self.height/5-self.height/self.height/16
+        #     source:r"Card Game\Images\card_sleeve.png"
       
 
 #########################################################################################################################################
@@ -423,12 +421,113 @@
 
 #########################################################################################################################################
 
-        Rectangle: # hand
-            pos:self.width/106.666666667,0
-            size: self.width/12.8,self.height/5.4
-            source: hand_1
+        # Rectangle: # hand bottom left
+        #     pos:self.width/106.666666667,0
+        #     size: self.width/12.8,self.height/5.4
+        #     source: player_hand.stored[0]
 
-        Rectangle: # hand
-            pos:2*self.width/106.666666667 + self.width/12.8,0
-            size: self.width/12.8,self.height/5.4
-            source: hand_2
+        # Rectangle: # hand bottom right
+        #     pos:2*self.width/106.666666667 + self.width/12.8,0
+        #     size: self.width/12.8,self.height/5.4
+        #     source: player_hand.stored[1]
+
+        # Rectangle: # hand top left
+        #     pos:self.width/106.666666667,self.height/5.4 + self.height/5.4/100
+        #     size: self.width/12.8,self.height/5.4
+        #     source: player_hand.stored[2]
+
+        # Rectangle: # hand top right
+        #     pos:2*self.width/106.666666667 + self.width/12.8,self.height/5.4 + self.height/5.4/100
+        #     size: self.width/12.8,self.height/5.4
+        #     source: player_hand.stored[3]
+
+#########################################################################################################################################
+    
+    Button: # deck
+        background_color: 0,1,0,0
+        size_hint: 0.08333333333,0.2
+        pos_hint:{"right":0.79166666666}
+        on_press: root.draw()
+        
+        Image:
+            source: r"Card Game\Images\card_sleeve.png"
+            center_x: self.parent.center_x
+            bottom_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Button: # hand bottom left
+        background_color: 0,0,0,0
+        size_hint: 0.07575757575,0.18518518518
+        pos_hint:{"right":0.0875}
+        Image:
+            id: hand_one
+            source: player_hand.stored[0]
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            pos: self.parent.pos
+            stretch: True
+
+    Button: # hand bottom right
+        background_color: 0,0,0,0
+        size_hint: 0.07575757575,0.18518518518
+        pos_hint:{"right":0.175}
+        Image:
+            id: hand_two
+            source: player_hand.stored[1]
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            pos: self.parent.pos
+            stretch: True
+
+
+
+    Button: # hand top left
+        background_color: 0,0,0,0
+        size_hint: 0.07575757575,0.18518518518
+        pos_hint:{"right":0.0875, "top":0.4}
+        Image:
+            id: hand_three
+            source: player_hand.stored[2]
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
+
+    Button: # hand top right
+        background_color: 0,0,0,0
+        size_hint: 0.07575757575,0.18518518518
+        pos_hint:{"right":0.175, "top":0.4}
+        Image:
+            id: hand_four
+            source: player_hand.stored[3]
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Button: # charecter
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.46556115308, "top":0.16394335511}
+        Image:
+            id: swordman
+            source: r"Card Game\Images\Swords man.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Button: # charecter
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.53122605363, "top":0.16394335511}
+        Image:
+            id: ion
+            source: r"Card Game\Images\ion.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 

@@ -5,15 +5,32 @@
 #:import screen_height dimensions.screen_height_kv
 #:import board_width_pos dimensions.board_width_pos
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <game_board>:
     canvas:
+    
 
         Color:
             rgba: 0.8,1,1,1
 
         Rectangle: # Game board
             pos:board_width_pos,0
-            size: board_width, board_height
+            size: board_width, board_height          
 
 #########################################################################################################################################
         Color:
@@ -22,6 +39,7 @@
         Rectangle: # Player zone
             pos:board_width_pos,0
             size: board_width, board_height/5
+            
 
 #########################################################################################################################################
         Color:
@@ -51,9 +69,13 @@
             width: 1
             rectangle: (board_width_pos+board_width-board_width/6, 0, board_width/6, board_height/5)
 
-        Line: # Player deck
-            width: 1
-            rectangle: (board_width_pos+board_width-board_width/6+board_width/72, board_height/135, board_width/6-board_width/36, board_height/5-board_height/67.5)
+        Color:
+            rgb: 1,1,1
+        Rectangle: # Player deck
+            pos: board_width_pos+board_width-board_width/6+board_width/72, board_height/135
+            size: board_width/6-board_width/36, board_height/5-board_height/67.5
+            source:r"Card Game\Images\card_sleeve.png"
+      
 
 #########################################################################################################################################
         Color:
@@ -72,7 +94,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/15.88 , board_height/8.5
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/5.8 , board_height/8.5
@@ -80,7 +102,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/5.8 , board_height/8.5
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/3.55 , board_height/8.5
@@ -88,7 +110,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/3.55 , board_height/8.5
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/2.559 , board_height/8.5
@@ -96,7 +118,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/2.559 , board_height/8.5
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/11 , board_height/27.69
@@ -104,7 +126,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/11 , board_height/27.69
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/4.4 , board_height/27.69
@@ -112,7 +134,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/4.4 , board_height/27.69
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/2.75 , board_height/27.69
@@ -120,7 +142,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/3)+board_width/2.75 , board_height/27.69
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
 #########################################################################################################################################
 #########################################################################################################################################
@@ -159,11 +181,14 @@
             width: 1
             rectangle: (board_width_pos, board_height-board_height/5, board_width/6, board_height/5)
 
-        Line: # Opponent deck
-            width: 1
-            rectangle: (board_width_pos+board_width/72, board_height-board_height/5+board_height/135, board_width/6-board_width_pos/36, board_height/5-board_height/67.5)
+        Color:
+            rgb: 1,1,1
+        Rectangle: # Opponent deck
+            pos: board_width_pos+board_width/72, board_height-board_height/5+board_height/135
+            size: board_width/6-board_width/36, board_height/5-board_height/67.5
+            source:r"Card Game\Images\card_sleeve.png"
 
-#########################################################################################################################################
+##################################################################################
 #########################################################################################################################################
 #########################################################################################################################################
 #########################################################################################################################################
@@ -185,7 +210,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/6)+68 , board_height-board_height/6.1
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/6)+186 , board_height-board_height/6.1
@@ -193,7 +218,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/6)+186 , board_height-board_height/6.1
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/6)+304 , board_height-board_height/6.1
@@ -201,7 +226,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/6)+304 , board_height-board_height/6.1
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/6)+422 , board_height-board_height/6.1
@@ -209,7 +234,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/6)+422 , board_height-board_height/6.1
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/6)+97.5 , board_height-board_height/12.1
@@ -217,7 +242,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/6)+97.5 , board_height-board_height/12.1
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/6)+245 , board_height-board_height/12.1
@@ -225,7 +250,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/6)+245 , board_height-board_height/12.1
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
         Ellipse:
             pos:(board_width_pos+board_width/6)+392.5 , board_height-board_height/12.1
@@ -233,7 +258,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/6)+392.5 , board_height-board_height/12.1
             size:board_width/21.6,board_height/21.6
-            source:r"C:\Users\salam\Downloads\summon_circle.png"
+            source:r"Card Game\Images\summon_circle.png"
 
 #########################################################################################################################################
 #########################################################################################################################################
@@ -359,22 +384,22 @@
         Ellipse: # attack spots left down
             pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)-20
             size:board_width/27,board_height/27
-            source:r"C:\Users\salam\Downloads\sword (4).png"
+            source:r"Card Game\Images\sword (4).png"
 
         Ellipse: # attack spots left up
             pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+580
             size:board_width/27,board_height/27
-            source:r"C:\Users\salam\Downloads\uprigtht_sword.png"
+            source:r"Card Game\Images\uprigtht_sword.png"
             
         Ellipse: # attack spots right down
             pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)-20
             size:board_width/27,board_height/27
-            source:r"C:\Users\salam\Downloads\sword (4).png"
+            source:r"Card Game\Images\sword (4).png"
 
         Ellipse: # attack spots right up
             pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+580
             size:board_width/27,board_height/27
-            source:r"C:\Users\salam\Downloads\uprigtht_sword.png"
+            source:r"Card Game\Images\uprigtht_sword.png"
 
 #########################################################################################################################################
 
@@ -387,7 +412,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+67.5
             size:board_width/27,board_height/27
-            source:r"C:\Users\salam\Downloads\spiral_illusion.png"
+            source:r"Card Game\Images\spiral_illusion.png"
 
         Ellipse: # summon spots left up
             pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+492.5
@@ -395,7 +420,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/5)-18.75,(board_height/5+24)+492.5
             size:board_width/27,board_height/27
-            source:r"C:\Users\salam\Downloads\spiral_illusion.png"
+            source:r"Card Game\Images\spiral_illusion.png"
 
         Ellipse: # summon spots right down
             pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+67.5
@@ -403,7 +428,7 @@
         Ellipse:
             pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+67.5
             size:board_width/27,board_height/27
-            source:r"C:\Users\salam\Downloads\spiral_illusion.png"
+            source:r"Card Game\Images\spiral_illusion.png"
 
         Ellipse: # summon spots right up
             pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+492.5
@@ -411,4 +436,5 @@
         Ellipse:
             pos:(board_width_pos+board_width/5*4)-18.75,(board_height/5+24)+492.5
             size:board_width/27,board_height/27
-            source:r"C:\Users\salam\Downloads\spiral_illusion.png"
+            source:r"Card Game\Images\spiral_illusion.png"
+
