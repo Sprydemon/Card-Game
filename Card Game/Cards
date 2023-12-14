@@ -1,0 +1,13 @@
+class Card:
+    def __init__(self, Health, Attack):
+        self.Health = Health
+        self.Attack = Attack
+
+
+One_armed_sword_man = Card(12, 10)
+Spike = Card(250, 15)
+Ion = Card(4, 16)
+Jolt = Card(9, 13)
+Tank = Card(25, 6)
+Apex = Card(20, 12)
+Blade = Card(1, 10)
