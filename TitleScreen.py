@@ -3,6 +3,7 @@ from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.image import Image
+from kivy.clock import Clock
 
 class TitleScreen(Screen):
     def __init__(self, **kwargs):
@@ -47,3 +48,15 @@ class TitleScreen(Screen):
 
     def quit_game(self, instance):
         App.get_running_app().stop()
+
+
+class EndScreen(TitleScreen):
+    def __init__(self, **kwargs):
+        super(EndScreen, self).__init__(**kwargs)
+        game_over_label = Label(text="Game Over", font_size=40)
+        game_over_label.pos_hint = {'center_x': 0.5, 'center_y': 0.5}
+        self.add_widget(game_over_label)
+        Clock.schedule_once(self.remove_game_over, 5)
+
+    def remove_game_over(self, dt):
+        self.remove_widget(self.game_over_label)
