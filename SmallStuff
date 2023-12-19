@@ -1,0 +1,9 @@
+from kivy.clock import Clock
+from kivy.uix.label import Label
+
+            Game_Over = Label(text="Game Over", font_size=40)
+            Game_Over.pos_hint = {'center_x': 0.5, 'center_y': 0.5}
+            self.add_widget(Game_Over)
+
+            Clock.schedule_once(lambda dt: self.remove_widget(Game_Over), 5)
+            Clock.schedule_once(lambda dt: App.get_running_app().stop(), 5.1)
