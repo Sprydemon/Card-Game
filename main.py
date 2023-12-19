@@ -8,78 +8,78 @@ from kivy.uix.image import Image
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 
-class Card:
-    def __init__(self, Attack, Health, Movement):
-        self.Attack = Attack
-        self.Health = Health
-        self.Movement = Movement  
-        self.current_position = (0, 0)  #start position of card on the game board
-        self.is_alive = True
+# class Card:
+#     def __init__(self, Attack, Health, Movement):
+#         self.Attack = Attack
+#         self.Health = Health
+#         self.Movement = Movement  
+#         self.current_position = (0, 0)  #start position of card on the game board
+#         self.is_alive = True
 
-    def move(self, new_position, other_card):
-        # Check if the movement is within the allowed range based on grid distance and handle collisions
-        if self.determine_position(new_position) <= self.Movement and self.is_valid_position(new_position):
-            if not self.is_occupied(new_position, other_card):
-                self.current_position = new_position
-                self.Movement -= self.determine_position(new_position)  # Reduce movement points
-            else:
-                # If the position is occupied, perform an attack on the enemy card
-                enemy_card = self.get_occupied_card(new_position, other_card)
-                if enemy_card:
-                    self.attack_enemy(enemy_card)
+#     def move(self, new_position, other_card):
+#         # Check if the movement is within the allowed range based on grid distance and handle collisions
+#         if self.determine_position(new_position) <= self.Movement and self.is_valid_position(new_position):
+#             if not self.is_occupied(new_position, other_card):
+#                 self.current_position = new_position
+#                 self.Movement -= self.determine_position(new_position)  # Reduce movement points
+#             else:
+#                 # If the position is occupied, perform an attack on the enemy card
+#                 enemy_card = self.get_occupied_card(new_position, other_card)
+#                 if enemy_card:
+#                     self.attack_enemy(enemy_card)
 
-    def attack_enemy(self, enemy_card):
-     #Check if the enemy card is within attack range
-        if self.determine_position(enemy_card.current_position) <= self.attack_range:
-            #Deal damage to the enemy card
-            enemy_card.receive_damage(self.Attack)
+#     def attack_enemy(self, enemy_card):
+#      #Check if the enemy card is within attack range
+#         if self.determine_position(enemy_card.current_position) <= self.attack_range:
+#             #Deal damage to the enemy card
+#             enemy_card.receive_damage(self.Attack)
 
-    def receive_damage(self, damage):
-        #Reduce health points based on the damage received
-        self.Health -= damage
-        if self.Health <= 0:
-            #handle card death
-            self.is_alive = False
-            self.destroy()
+#     def receive_damage(self, damage):
+#         #Reduce health points based on the damage received
+#         self.Health -= damage
+#         if self.Health <= 0:
+#             #handle card death
+#             self.is_alive = False
+#             self.destroy()
 
-    def determine_position(self, new_position):
-        x1, y1 = self.current_position
-        x2, y2 = new_position
-        return abs(x2 - x1) + abs(y2 - y1)
+#     def determine_position(self, new_position):
+#         x1, y1 = self.current_position
+#         x2, y2 = new_position
+#         return abs(x2 - x1) + abs(y2 - y1)
     
-    def is_valid_position(self, position):
-        # Check if the position is within the game board's bounds (assuming a 5x5 board)
-        x, y = position
-        return 0 <= x <= 4 and 0 <= y <= 4
+#     def is_valid_position(self, position):
+#         # Check if the position is within the game board's bounds (assuming a 5x5 board)
+#         x, y = position
+#         return 0 <= x <= 4 and 0 <= y <= 4
 
-    def is_occupied(self, position, other_cards):
-        # Check if the position is already occupied by another card
-        return any(card.current_position == position for card in other_cards)
+#     def is_occupied(self, position, other_cards):
+#         # Check if the position is already occupied by another card
+#         return any(card.current_position == position for card in other_cards)
 
-    def get_occupied_card(self, position, other_cards):
-        # Get the card occupying the specified position
-        for card in other_cards:
-            if card.current_position == position:
-                return card
-        return None
+#     def get_occupied_card(self, position, other_cards):
+#         # Get the card occupying the specified position
+#         for card in other_cards:
+#             if card.current_position == position:
+#                 return card
+#         return None
     
-class Player:
-    def __init__(self, name):
-        self.name = name
-        self.cards = []  #Player's cards in the game
-        self.is_winner = False  #Track if the player has won
+# class Player:
+#     def __init__(self, name):
+#         self.name = name
+#         self.cards = []  #Player's cards in the game
+#         self.is_winner = False  #Track if the player has won
 
-    def add_card(self, card):
-        self.cards.append(card)
+#     def add_card(self, card):
+#         self.cards.append(card)
 
-    def remove_card(self, card):
-        self.cards.remove(card)
+#     def remove_card(self, card):
+#         self.cards.remove(card)
 
-    def check_win_condition(self, opponent):
-        #If the opponent has no cards remaining, this player wins
-        if not opponent.cards:
-            self.is_winner = True
-            print(f"{self.name} wins the game!")
+#     def check_win_condition(self, opponent):
+#         #If the opponent has no cards remaining, this player wins
+#         if not opponent.cards:
+#             self.is_winner = True
+#             print(f"{self.name} wins the game!")
 
 class GameScreen(Screen):
     def __init__(self, **kwargs):
@@ -121,7 +121,6 @@ class TitleScreen(Screen):
     def start_game(self, instance):
         global run_game
         run_game = True
-        
         App.get_running_app().stop()
 
     def goto_options(self, instance):
@@ -150,7 +149,13 @@ class GameApp(App):
         return screen_manager
 
 if __name__ == '__main__':
-    GameApp().run()
-    if run_game == True:
-        PongApp().run()
+    while True:
+        GameApp().run()
+        print(run_game)
+        if run_game == True:
+            PongApp().run()
+            run_game = False
+        else:
+            break
+
     

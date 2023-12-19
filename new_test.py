@@ -4,12 +4,13 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 from deck import player
 from charecter import Charecter
+global stage
+stage = 0
 global player_life
 player_life = 3
 global opponent_life
 opponent_life = 3
 
-monster = Charecter(10, 10, 4, 0, "opponent", r"Card Game\Images\Swords man.png")
 global right_lane
 right_lane = ["x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x"]
 global mid_lane
@@ -136,11 +137,19 @@ O_jolt_summon = False
 global O_jolt_index
 O_jolt_index = 9
 
+
 global rest_spot
 rest_spot = [swordman, ion, apex, blade, tank, bomb, jolt]
 global O_rest_spot
 O_rest_spot = [O_swordman, O_ion, O_apex, O_blade, O_tank, O_bomb, O_jolt]
+
+global player_list
+player_list = [swordman, ion, apex, blade, tank, bomb, jolt]
+global opponent_list
+opponent_list = [O_swordman, O_ion, O_apex, O_blade, O_tank, O_bomb, O_jolt]
+
 class game_board(FloatLayout):
+
 
     def on_touch_down(self, touch):
         global opponent_life
@@ -185,9 +194,7 @@ class game_board(FloatLayout):
 
 #########################################################################################################################################
 # swordman
-        self.ids.swordmanATK.font_size = Window.height/125
-        self.ids.swordmanHP.font_size = Window.height/125
-        self.ids.swordmanSPD.font_size = Window.height/125
+
         if swordman.alive == True:
             # summon
             if self.ids.swordman.pos[0] < touch.pos[0] and self.ids.swordman.pos[0] + self.ids.swordman.size[0] > touch.pos[0] and self.ids.swordman.pos[1] < touch.pos[1] and self.ids.swordman.pos[1] + self.ids.swordman.size[1] > touch.pos[1] and self.ids.swordman.pos[1] <= Window.height/5 and swordman.cd <= 0:
@@ -349,9 +356,7 @@ class game_board(FloatLayout):
                             mid_lane[swordman_index-1].hp -= swordman.atk
 ########################################################################################################################################
 # ion
-        self.ids.ionATK.font_size = Window.height/125
-        self.ids.ionHP.font_size = Window.height/125
-        self.ids.ionSPD.font_size = Window.height/125
+
         if ion.alive == True:
             # summon
             if self.ids.ion.pos[0] < touch.pos[0] and self.ids.ion.pos[0] + self.ids.ion.size[0] > touch.pos[0] and self.ids.ion.pos[1] < touch.pos[1] and self.ids.ion.pos[1] + self.ids.ion.size[1] > touch.pos[1] and self.ids.ion.pos[1] <= Window.height/5 and ion.cd <= 0:
@@ -512,9 +517,7 @@ class game_board(FloatLayout):
                             mid_lane[ion_index-1].hp -= ion.atk
 #########################################################################################################################################
 # apex
-        self.ids.apexATK.font_size = Window.height/125
-        self.ids.apexHP.font_size = Window.height/125
-        self.ids.apexSPD.font_size = Window.height/125
+
         if apex.alive == True:
             # summon
             if self.ids.apex.pos[0] < touch.pos[0] and self.ids.apex.pos[0] + self.ids.apex.size[0] > touch.pos[0] and self.ids.apex.pos[1] < touch.pos[1] and self.ids.apex.pos[1] + self.ids.apex.size[1] > touch.pos[1] and self.ids.apex.pos[1] <= Window.height/5 and apex.cd <= 0:
@@ -676,9 +679,7 @@ class game_board(FloatLayout):
                             mid_lane[apex_index-1].hp -= apex.atk
 #########################################################################################################################################
 # blade
-        self.ids.bladeATK.font_size = Window.height/125
-        self.ids.bladeHP.font_size = Window.height/125
-        self.ids.bladeSPD.font_size = Window.height/125
+ 
         if blade.alive == True:
             # summon
             if self.ids.blade.pos[0] < touch.pos[0] and self.ids.blade.pos[0] + self.ids.blade.size[0] > touch.pos[0] and self.ids.blade.pos[1] < touch.pos[1] and self.ids.blade.pos[1] + self.ids.blade.size[1] > touch.pos[1] and self.ids.blade.pos[1] <= Window.height/5 and blade.cd <= 0:
@@ -840,9 +841,7 @@ class game_board(FloatLayout):
                             mid_lane[blade_index-1].hp -= blade.atk
 #########################################################################################################################################
 # tank
-        self.ids.tankATK.font_size = Window.height/125
-        self.ids.tankHP.font_size = Window.height/125
-        self.ids.tankSPD.font_size = Window.height/125
+
         if tank.alive == True:
             # summon
             if self.ids.tank.pos[0] < touch.pos[0] and self.ids.tank.pos[0] + self.ids.tank.size[0] > touch.pos[0] and self.ids.tank.pos[1] < touch.pos[1] and self.ids.tank.pos[1] + self.ids.tank.size[1] > touch.pos[1] and self.ids.tank.pos[1] <= Window.height/5 and tank.cd <= 0:
@@ -1004,9 +1003,7 @@ class game_board(FloatLayout):
                             mid_lane[tank_index-1].hp -= tank.atk
 #########################################################################################################################################
 # bomb
-        self.ids.bombATK.font_size = Window.height/125
-        self.ids.bombHP.font_size = Window.height/125
-        self.ids.bombSPD.font_size = Window.height/125
+
         if bomb.alive == True:
             # summon
             if self.ids.bomb.pos[0] < touch.pos[0] and self.ids.bomb.pos[0] + self.ids.bomb.size[0] > touch.pos[0] and self.ids.bomb.pos[1] < touch.pos[1] and self.ids.bomb.pos[1] + self.ids.bomb.size[1] > touch.pos[1] and self.ids.bomb.pos[1] <= Window.height/5 and bomb.cd <= 0:
@@ -1168,9 +1165,7 @@ class game_board(FloatLayout):
                             mid_lane[bomb_index-1].hp -= bomb.atk
 #########################################################################################################################################
 # jolt
-        self.ids.joltATK.font_size = Window.height/125
-        self.ids.joltHP.font_size = Window.height/125
-        self.ids.joltSPD.font_size = Window.height/125
+
         if jolt.alive == True:
             # summon
             if self.ids.jolt.pos[0] < touch.pos[0] and self.ids.jolt.pos[0] + self.ids.jolt.size[0] > touch.pos[0] and self.ids.jolt.pos[1] < touch.pos[1] and self.ids.jolt.pos[1] + self.ids.jolt.size[1] > touch.pos[1] and self.ids.jolt.pos[1] <= Window.height/5 and jolt.cd <= 0:
@@ -2151,6 +2146,7 @@ class game_board(FloatLayout):
 # O_swordman killed on player turn
         if O_swordman.alive == True:
             if O_swordman.hp <= 0:
+                O_swordman_summon = False
                 O_swordman.alive = False
                 if O_swordman.lane == "left":
                     left_lane[O_swordman_index] = "x"
@@ -2165,6 +2161,7 @@ class game_board(FloatLayout):
 # O_ion killed on player turn
         if O_ion.alive == True:
             if O_ion.hp <= 0:
+                O_ion_summon = False
                 O_ion.alive = False
                 if O_ion.lane == "left":
                     left_lane[O_ion_index] = "x"
@@ -2179,6 +2176,7 @@ class game_board(FloatLayout):
 # O_apex killed on player turn
         if O_apex.alive == True:
             if O_apex.hp <= 0:
+                O_apex_summon = False
                 O_apex.alive = False
                 if O_apex.lane == "left":
                     left_lane[O_apex_index] = "x"
@@ -2193,6 +2191,7 @@ class game_board(FloatLayout):
 # O_blade killed on player turn
         if O_blade.alive == True:
             if O_blade.hp <= 0:
+                O_blade_summon = False
                 O_blade.alive = False
                 if O_blade.lane == "left":
                     left_lane[O_blade_index] = "x"
@@ -2207,6 +2206,7 @@ class game_board(FloatLayout):
 # O_tank killed on player turn
         if O_tank.alive == True:
             if O_tank.hp <= 0:
+                O_tank_summon = False
                 O_tank.alive = False
                 if O_tank.lane == "left":
                     left_lane[O_tank_index] = "x"
@@ -2221,6 +2221,7 @@ class game_board(FloatLayout):
 # O_bomb killed on player turn
         if O_bomb.alive == True:
             if O_bomb.hp <= 0:
+                O_bomb_summon = False
                 O_bomb.alive = False
                 if O_bomb.lane == "left":
                     left_lane[O_bomb_index] = "x"
@@ -2235,6 +2236,7 @@ class game_board(FloatLayout):
 # O_jolt killed on player turn
         if O_jolt.alive == True:
             if O_jolt.hp <= 0:
+                O_jolt_summon = False
                 O_jolt.alive = False
                 if O_jolt.lane == "left":
                     left_lane[O_jolt_index] = "x"
@@ -2696,6 +2698,296 @@ class game_board(FloatLayout):
             self.ids.O_core3.source = r"Card Game\Images\card_sleeve.png"
                     
 
+# lose
+        global player_life
+        if left_lane[0] != "x":
+            if left_lane[0].team == "opponent" and damage_recived == 1:
+                player_life -= 1
+                damage_recived = 0
+                print(left_lane[0].source, "left")
+        if damage_recived == 1:
+            if right_lane[0] != "x":
+                if right_lane[0].team == "opponent":
+                    player_life -= 1
+                    print(right_lane, "right")  
+        if player_life == 2:
+            self.ids.H1.pos = -self.ids.H1.size[0],-self.ids.H1.size[1]
+        elif player_life == 1:
+            self.ids.H2.pos = -self.ids.H2.size[0],-self.ids.H2.size[1]
+        elif player_life <= 0:
+            player_life == 3
+            self.ids.O_H1.pos = Window.width/1.09756097561 - self.ids.O_H1.size[0], Window.height - self.ids.O_H1.size[1] 
+            self.ids.O_H2.pos = Window.width/1.09756097561 - self.ids.O_H2.size[0], Window.height - 2*self.ids.O_H2.size[1] 
+            player_life = 3
+            self.ids.H1.pos = Window.width/1.09756097561 - self.ids.H1.size[0], 2*self.ids.H1.size[1] 
+            self.ids.H2.pos = Window.width/1.09756097561 - self.ids.H2.size[0], self.ids.H2.size[1] 
+            global stage
+            stage += 1
+            for row in opponent_list:
+                row.atk = row.original_atk_stage_0 + stage
+                row.hp = row.original_hp_stage_0 + stage
+                row.spd = row.original_spd_stage_0 + int(stage/3)
+                row.cd = row.original_cd_stage_0 - int(stage/5)
+            draw_per_turn = 4
+            rest_spot.clear()         
+            for row in player_list:
+                rest_spot.append(row)
+            O_rest_spot.clear()
+            for row in opponent_list:
+                O_rest_spot.append(row)
+            for row in right_lane:
+                if row != "x":
+                    right_lane.insert(right_lane.index(row), "x")
+                    right_lane.remove(row)
+            for row in mid_lane:
+                if row != "x":
+                    mid_lane.insert(mid_lane.index(row), "x")
+                    mid_lane.remove(row)
+            for row in left_lane:
+                if row != "x":
+                    left_lane.insert(left_lane.index(row), "x")
+                    left_lane.remove(row)
+            for row in core:
+                if row != "x":
+                    core.insert(core.index(row), "x")
+                    core.remove(row)
+            for row in O_core:
+                if row != "x":
+                    O_core.insert(O_core.index(row), "x")
+                    O_core.remove(row)
+            if hand1 == True:
+                player.use_card(player.stored[0])
+            if hand2 == True:
+                player.use_card(player.stored[1])
+            if hand3 == True:
+                player.use_card(player.stored[2])
+            if hand4 == True:
+                player.use_card(player.stored[3])
+            player.shuffle()
+
+            swordman_bool = False
+            swordman_index = 9
+            self.ids.swordman.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/15.88 , Window.height/8.5
+
+            ion_bool = False
+            ion_index = 9
+            self.ids.ion.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/5.8 , Window.height/8.5
+        
+            apex_bool = False
+            apex_index = 9
+            self.ids.apex.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/3.55 , Window.height/8.5
+
+            blade_bool = False
+            blade_index = 9
+            self.ids.blade.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/2.559 , Window.height/8.5   
+
+            tank_bool = False
+            tank_index = 9
+            self.ids.tank.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/11 , Window.height/27.69
+
+            bomb_bool = False
+            bomb_index = 9
+            self.ids.bomb.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/4.4 , Window.height/27.69
+
+            jolt_bool = False
+            jolt_index = 9
+            self.ids.jolt.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/2.75 , Window.height/27.69
+
+            swordman.cd = swordman.original_cd
+            ion.cd = ion.original_cd
+            apex.cd = apex.original_cd
+            blade.cd = blade.original_cd
+            tank.cd = tank.original_cd
+            bomb.cd = bomb.original_cd
+            jolt.cd = jolt.original_cd
+
+            self.ids.swordmanCD.text = str(swordman.cd)
+            self.ids.ionCD.text = str(ion.cd)
+            self.ids.apexCD.text = str(apex.cd)
+            self.ids.bladeCD.text = str(blade.cd)
+            self.ids.tankCD.text = str(tank.cd)
+            self.ids.bombCD.text = str(bomb.cd)
+            self.ids.joltCD.text = str(jolt.cd)
+             
+            
+            O_swordman_summon = False
+            O_swordman_index = 9
+            self.ids.O_swordman.pos = (Window.width/5+3*Window.width/5/6)+Window.width/28.2352941176 , Window.height-Window.height/6.1 
+
+            O_ion_summon = False
+            O_ion_index = 9
+            self.ids.O_ion.pos = (Window.width/5+3*Window.width/5/6)+Window.width/10.3225806452 , Window.height-Window.height/6.1
+
+            O_apex_summon = False
+            O_apex_index = 9
+            self.ids.O_apex.pos = (Window.width/5+3*Window.width/5/6)+Window.width/6.31578947368 , Window.height-Window.height/6.1
+
+            O_blade_summon = False
+            O_blade_index = 9
+            self.ids.O_blade.pos = (Window.width/5+3*Window.width/5/6)+Window.width/4.54976303318 , Window.height-Window.height/6.1
+
+            O_tank_summon = False
+            O_tank_index = 9
+            self.ids.O_tank.pos = (Window.width/5+3*Window.width/5/6)+Window.width/19.6923076923 , Window.height-Window.height/12.1
+
+            O_bomb_summon = False
+            O_bomb_index = 9
+            self.ids.O_bomb.pos = (Window.width/5+3*Window.width/5/6)+Window.width/7.83673469388 , Window.height-Window.height/12.1
+
+            O_jolt_summon = False
+            O_jolt_index =  9 
+            self.ids.O_jolt.pos = (Window.width/5+3*Window.width/5/6)+Window.width/4.89171974522 , Window.height-Window.height/12.1
+
+            self.ids.core1.source = r"Card Game\Images\card_sleeve.png"
+            self.ids.core2.source = r"Card Game\Images\card_sleeve.png"
+            self.ids.core3.source = r"Card Game\Images\card_sleeve.png"
+
+            self.ids.O_core1.source = r"Card Game\Images\card_sleeve.png"
+            self.ids.O_core2.source = r"Card Game\Images\card_sleeve.png"
+            self.ids.O_core3.source = r"Card Game\Images\card_sleeve.png"
+
+
+            App.get_running_app().stop()
+
+
+# win 
+        global opponent_life
+        if opponent_life == 2:
+            self.ids.O_H1.pos = -self.ids.O_H1.size[0],-self.ids.O_H1.size[1]
+        elif opponent_life == 1:
+            self.ids.O_H2.pos = -self.ids.O_H2.size[0],-self.ids.O_H2.size[1]
+        elif opponent_life <= 0:
+            opponent_life = 3
+            self.ids.O_H1.pos = Window.width/1.09756097561 - self.ids.O_H1.size[0], Window.height - self.ids.O_H1.size[1] 
+            self.ids.O_H2.pos = Window.width/1.09756097561 - self.ids.O_H2.size[0], Window.height - 2*self.ids.O_H2.size[1] 
+            player_life = 3
+            self.ids.H1.pos = Window.width/1.09756097561 - self.ids.H1.size[0], 2*self.ids.H1.size[1] 
+            self.ids.H2.pos = Window.width/1.09756097561 - self.ids.H2.size[0], self.ids.H2.size[1] 
+            stage += 1
+            for row in opponent_list:
+                row.atk = row.original_atk_stage_0 + stage
+                row.hp = row.original_hp_stage_0 + stage
+                row.spd = row.original_spd_stage_0 + int(stage/3)
+                row.cd = row.original_cd_stage_0 - int(stage/5)
+            draw_per_turn = 4
+            rest_spot.clear()         
+            for row in player_list:
+                rest_spot.append(row)
+            O_rest_spot.clear()
+            for row in opponent_list:
+                O_rest_spot.append(row)
+            for row in right_lane:
+                if row != "x":
+                    right_lane.insert(right_lane.index(row), "x")
+                    right_lane.remove(row)
+            for row in mid_lane:
+                if row != "x":
+                    mid_lane.insert(mid_lane.index(row), "x")
+                    mid_lane.remove(row)
+            for row in left_lane:
+                if row != "x":
+                    left_lane.insert(left_lane.index(row), "x")
+                    left_lane.remove(row)
+            for row in core:
+                if row != "x":
+                    core.insert(core.index(row), "x")
+                    core.remove(row)
+            for row in O_core:
+                if row != "x":
+                    O_core.insert(O_core.index(row), "x")
+                    O_core.remove(row)
+            if hand1 == True:
+                player.use_card(player.stored[0])
+            if hand2 == True:
+                player.use_card(player.stored[1])
+            if hand3 == True:
+                player.use_card(player.stored[2])
+            if hand4 == True:
+                player.use_card(player.stored[3])
+            player.shuffle()
+
+            swordman_bool = False
+            swordman_index = 9
+            self.ids.swordman.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/15.88 , Window.height/8.5
+
+            ion_bool = False
+            ion_index = 9
+            self.ids.ion.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/5.8 , Window.height/8.5
+        
+            apex_bool = False
+            apex_index = 9
+            self.ids.apex.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/3.55 , Window.height/8.5
+
+            blade_bool = False
+            blade_index = 9
+            self.ids.blade.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/2.559 , Window.height/8.5   
+
+            tank_bool = False
+            tank_index = 9
+            self.ids.tank.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/11 , Window.height/27.69
+
+            bomb_bool = False
+            bomb_index = 9
+            self.ids.bomb.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/4.4 , Window.height/27.69
+
+            jolt_bool = False
+            jolt_index = 9
+            self.ids.jolt.pos = (Window.width/5+3*Window.width/5/3)+3*Window.width/5/2.75 , Window.height/27.69
+
+            swordman.cd = swordman.original_cd
+            ion.cd = ion.original_cd
+            apex.cd = apex.original_cd
+            blade.cd = blade.original_cd
+            tank.cd = tank.original_cd
+            bomb.cd = bomb.original_cd
+            jolt.cd = jolt.original_cd
+
+            self.ids.swordmanCD.text = str(swordman.cd)
+            self.ids.ionCD.text = str(ion.cd)
+            self.ids.apexCD.text = str(apex.cd)
+            self.ids.bladeCD.text = str(blade.cd)
+            self.ids.tankCD.text = str(tank.cd)
+            self.ids.bombCD.text = str(bomb.cd)
+            self.ids.joltCD.text = str(jolt.cd)
+             
+            
+            O_swordman_summon = False
+            O_swordman_index = 9
+            self.ids.O_swordman.pos = (Window.width/5+3*Window.width/5/6)+Window.width/28.2352941176 , Window.height-Window.height/6.1 
+
+            O_ion_summon = False
+            O_ion_index = 9
+            self.ids.O_ion.pos = (Window.width/5+3*Window.width/5/6)+Window.width/10.3225806452 , Window.height-Window.height/6.1
+
+            O_apex_summon = False
+            O_apex_index = 9
+            self.ids.O_apex.pos = (Window.width/5+3*Window.width/5/6)+Window.width/6.31578947368 , Window.height-Window.height/6.1
+
+            O_blade_summon = False
+            O_blade_index = 9
+            self.ids.O_blade.pos = (Window.width/5+3*Window.width/5/6)+Window.width/4.54976303318 , Window.height-Window.height/6.1
+
+            O_tank_summon = False
+            O_tank_index = 9
+            self.ids.O_tank.pos = (Window.width/5+3*Window.width/5/6)+Window.width/19.6923076923 , Window.height-Window.height/12.1
+
+            O_bomb_summon = False
+            O_bomb_index = 9
+            self.ids.O_bomb.pos = (Window.width/5+3*Window.width/5/6)+Window.width/7.83673469388 , Window.height-Window.height/12.1
+
+            O_jolt_summon = False
+            O_jolt_index = 9
+            self.ids.O_jolt.pos = (Window.width/5+3*Window.width/5/6)+Window.width/4.89171974522 , Window.height-Window.height/12.1
+
+            self.ids.core1.source = r"Card Game\Images\card_sleeve.png"
+            self.ids.core2.source = r"Card Game\Images\card_sleeve.png"
+            self.ids.core3.source = r"Card Game\Images\card_sleeve.png"
+
+            self.ids.O_core1.source = r"Card Game\Images\card_sleeve.png"
+            self.ids.O_core2.source = r"Card Game\Images\card_sleeve.png"
+            self.ids.O_core3.source = r"Card Game\Images\card_sleeve.png"
+
+            
 
 #########################################################################################################################################
 # show updated stats of player
@@ -2725,43 +3017,32 @@ class game_board(FloatLayout):
         self.ids.O_swordmanATK.text = str(O_swordman.atk)
         self.ids.O_swordmanHP.text = str(O_swordman.hp)
         self.ids.O_swordmanSPD.text = str(O_swordman.spd)
+        self.ids.O_swordmanCD.text = str(O_swordman.cd)
         self.ids.O_ionATK.text = str(O_ion.atk)
         self.ids.O_ionHP.text = str(O_ion.hp)
         self.ids.O_ionSPD.text = str(O_ion.spd)
+        self.ids.O_ionCD.text = str(O_ion.cd)
         self.ids.O_apexATK.text = str(O_apex.atk)
         self.ids.O_apexHP.text = str(O_apex.hp)
         self.ids.O_apexSPD.text = str(O_apex.spd)
+        self.ids.O_apexCD.text = str(O_apex.cd)
         self.ids.O_bladeATK.text = str(O_blade.atk)
         self.ids.O_bladeHP.text = str(O_blade.hp)
         self.ids.O_bladeSPD.text = str(O_blade.spd)
+        self.ids.O_bladeCD.text = str(O_blade.cd)
         self.ids.O_tankATK.text = str(O_tank.atk)
         self.ids.O_tankHP.text = str(O_tank.hp)
         self.ids.O_tankSPD.text = str(O_tank.spd)
+        self.ids.O_tankCD.text = str(O_tank.cd)
         self.ids.O_bombATK.text = str(O_bomb.atk)
         self.ids.O_bombHP.text = str(O_bomb.hp)
         self.ids.O_bombSPD.text = str(O_bomb.spd)
+        self.ids.O_bombCD.text = str(O_bomb.cd)
         self.ids.O_joltATK.text = str(O_jolt.atk)
         self.ids.O_joltHP.text = str(O_jolt.hp)
         self.ids.O_joltSPD.text = str(O_jolt.spd)
+        self.ids.O_joltCD.text = str(O_jolt.cd)
 #########################################################################################################################################
-# win 
-        global opponent_life
-        if opponent_life <= 0:
-            print("You Win")
-# lose
-        global player_life
-        if left_lane[0] != "x":
-            if left_lane[0].team == "opponent":
-                player_life -= 1
-                damage_recived = 0
-        if damage_recived == 1:
-            if right_lane[0] != "x":
-                if right_lane[0].team == "opponent":
-                    player_life -= 1
-       
-        if player_life <= 0:
-            print("You Lose")
-
 
 
 
