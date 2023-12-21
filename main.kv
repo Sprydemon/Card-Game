@@ -1,0 +1,1296 @@
+#:kivy 1.10.0
+
+
+
+<game_board>:
+    canvas:
+    
+
+        Color:
+            rgba: 0.8,1,1,1
+
+        Rectangle: # Game board
+            pos:self.width/5,0
+            size: 3*self.width/5, self.height          
+
+#########################################################################################################################################
+        Color:
+            rgb:0,1,0
+
+        Rectangle: # Player zone
+            pos:self.width/5,0
+            size: 3*self.width/5, self.height/5
+            
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Player reival zone
+            width: 1
+            rectangle: (self.width/5, 0, 3*self.width/5/3, self.height/5)
+
+        Rectangle: # Player 1st reival
+            pos: self.width/5, self.height/45
+            size: 3*self.width/5/3, self.height/27
+
+        Rectangle: # Player 2nd reival
+            pos: self.width/5, self.height/12.27
+            size: 3*self.width/5/3, self.height/27
+
+        Rectangle: # Player 3rd reival
+            pos: self.width/5, self.height/7.1
+            size: 3*self.width/5/3, self.height/27
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Player deck zone
+            width: 1
+            rectangle: (self.width/5+3*self.width/5-3*self.width/5/6, 0, 3*self.width/5/6, self.height/5)
+
+        # Color:
+        #     rgb: 1,1,1
+        # Rectangle: # Player deck
+        #     pos: self.width/5+3*self.width/5-3*self.width/5/6+3*self.width/5/72, 0
+        #     size: 3*self.width/5/6-3*self.width/5/36, self.height/5-self.height/self.height/16
+        #     source:r"Images\card_sleeve.png"
+      
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Player main peices zone
+            width: 1
+            rectangle: (self.width/5+3*self.width/5/3, 0, 3*self.width/5/2, self.height/5)
+
+        Color:
+            rgba: 0,0.4,0,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/15.88 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/15.88 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/5.8 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/5.8 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/3.55 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/3.55 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/2.559 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/2.559 , self.height/8.5
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/11 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/11 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/4.4 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/4.4 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/2.75 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/3)+3*self.width/5/2.75 , self.height/27.69
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+#########################################################################################################################################
+#########################################################################################################################################
+        Color:
+            rgb:0,1,0
+
+        Rectangle: # Opponent Zone
+            pos:self.width/5,self.height-self.height/5
+            size: 3*self.width/5, self.height/5
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Opponent reival zone
+            width: 1
+            rectangle: (self.width/5+3*self.width/5-3*self.width/5/3, self.height-self.height/5, 3*self.width/5/3, self.height/5)
+
+        Rectangle: # Opponent 1st reival
+            pos: self.width/5+3*self.width/5-3*self.width/5/3, self.height-self.height/5+self.height/45
+            size: 3*self.width/5/3, self.height/27
+
+        Rectangle: # Opponent 2nd reival
+            pos: self.width/5+3*self.width/5-3*self.width/5/3, self.height-self.height/5+self.height/12.27
+            size: 3*self.width/5/3, self.height/27
+
+        Rectangle: # Opponent 3rd reival
+            pos: self.width/5+3*self.width/5-3*self.width/5/3, self.height-self.height/5+self.height/7.1
+            size: 3*self.width/5/3, self.height/27
+
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line:# Opponent deck zone
+            width: 1
+            rectangle: (self.width/5, self.height-self.height/5, 3*self.width/5/6, self.height/5)
+
+        Color:
+            rgb: 1,1,1
+        Rectangle: # Opponent deck
+            pos: self.width/5+3*self.width/5/72, self.height-self.height/5-self.height/self.height/16
+            size: 3*self.width/5/6-3*self.width/5/36, self.height/5-self.height/self.height/16
+            source:r"Images\card_sleeve.png"
+
+##################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+#########################################################################################################################################
+        Color
+            rgba: 0, 0, 0, 1
+
+        Line: # Opponent main peices zone
+            width: 1
+            rectangle: (self.width/5+3*self.width/5/6, self.height-self.height/5, 3*self.width/5/2, self.height/5)
+
+        Color:
+            rgba: 0,0.4,0,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/28.2352941176 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/28.2352941176  , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/10.3225806452 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/10.3225806452 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/6.31578947368 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/6.31578947368 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/4.54976303318 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/4.54976303318 , self.height-self.height/6.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/19.6923076923 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/19.6923076923 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/7.83673469388 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/7.83673469388 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/4.89171974522 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/6)+self.width/4.89171974522 , self.height-self.height/12.1
+            size:3*self.width/5/21.6,self.height/21.6
+            source:r"Images\summon_circle.png"
+
+#########################################################################################################################################
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # Conecting lines bottom
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5),self.height/5+self.height/45, (3*self.width/5-2*(3*self.width/5/5)),5)
+
+        Line: # Conecting lines mid
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5),self.height/2, (3*self.width/5-2*(3*self.width/5/5)),5)
+
+        Line: # Conecting lines top
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5),(self.height/5)*4-self.height/45, (3*self.width/5-2*(3*self.width/5/5)),5)
+
+#########################################################################################################################################
+#########################################################################################################################################
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Line: # line left
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5)-self.width/1536,self.height/5+self.height/45, 5,self.height/1.8)
+        
+        Color:
+            rgba: 1,0.65,0.4,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/7.08196721311
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/4.54736842105
+            size:3*self.width/5/27,self.height/27
+
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/3.3488372093
+            size:3*self.width/5/27,self.height/27
+
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.65030674847
+            size:3*self.width/5/27,self.height/27
+
+#########################################################################################################################################
+        Color:# line mid
+            rgba: 0, 0, 0, 1
+
+        Line:
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/2)-self.width/1536,self.height/5+self.height/45, 5,self.height/1.8)
+
+        Color:
+            rgba: 1,0.65,0.4,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)-self.height/54
+            size:3*self.width/5/27,self.height/27
+        
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/7.08196721311
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/4.54736842105
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/3.3488372093
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.65030674847
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/2)-self.width/102.4,(self.height/5+self.height/45)+self.height/1.86206896552
+            size:3*self.width/5/27,self.height/27
+
+#########################################################################################################################################
+        Color:# line right
+            rgba: 0, 0, 0, 1
+
+        Line:
+            width: 2.5
+            rectangle: ((self.width/5+3*self.width/5/5*4)-self.width/1536,self.height/5+self.height/45, 5,self.height/1.8)
+        
+        Color:
+            rgba: 1,0.65,0.4,1
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/7.08196721311
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/4.54736842105
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/3.3488372093
+            size:3*self.width/5/27,self.height/27
+
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.65030674847
+            size:3*self.width/5/27,self.height/27
+
+#########################################################################################################################################
+        Color:
+            rgb:1,0,0
+            
+        Ellipse: # attack spots left down
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)-self.height/54
+            size:3*self.width/5/27,self.height/27
+            source:r"Images\sword (4).png"
+
+        Ellipse: # attack spots left up
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/1.86206896552
+            size:3*self.width/5/27,self.height/27
+            source:r"Images\uprigtht_sword.png"
+            
+        Ellipse: # attack spots right down
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)-self.height/54
+            size:3*self.width/5/27,self.height/27
+            source:r"Images\sword (4).png"
+
+        Ellipse: # attack spots right up
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/1.86206896552
+            size:3*self.width/5/27,self.height/27
+            source:r"Images\uprigtht_sword.png"
+
+#########################################################################################################################################
+
+        Color:
+            rgba: 1,1,0.8,1
+
+        Ellipse: # summon spots left down
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+            source:r"Images\spiral_illusion.png"
+
+        Ellipse: # summon spots left up
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+            source:r"Images\spiral_illusion.png"
+
+        Ellipse: # summon spots right down
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/16
+            size:3*self.width/5/27,self.height/27
+            source:r"Images\spiral_illusion.png"
+
+        Ellipse: # summon spots right up
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+        Ellipse:
+            pos:(self.width/5+3*self.width/5/5*4)-self.width/102.4,(self.height/5+self.height/45)+self.height/2.19289340102
+            size:3*self.width/5/27,self.height/27
+            source:r"Images\spiral_illusion.png"
+
+#########################################################################################################################################
+
+        # Rectangle: # hand bottom left
+        #     pos:self.width/106.666666667,0
+        #     size: self.width/12.8,self.height/5.4
+        #     source: player_hand.stored[0]
+
+        # Rectangle: # hand bottom right
+        #     pos:2*self.width/106.666666667 + self.width/12.8,0
+        #     size: self.width/12.8,self.height/5.4
+        #     source: player_hand.stored[1]
+
+        # Rectangle: # hand top left
+        #     pos:self.width/106.666666667,self.height/5.4 + self.height/5.4/100
+        #     size: self.width/12.8,self.height/5.4
+        #     source: player_hand.stored[2]
+
+        # Rectangle: # hand top right
+        #     pos:2*self.width/106.666666667 + self.width/12.8,self.height/5.4 + self.height/5.4/100
+        #     size: self.width/12.8,self.height/5.4
+        #     source: player_hand.stored[3]
+
+#########################################################################################################################################
+    
+    Button: # deck
+        background_color: 0,1,0,0
+        size_hint: 0.08333333333,0.2
+        pos_hint:{"right":0.79166666666}
+        on_press: root.draw()
+        
+        Image:
+            source: r"Images\card_sleeve.png"
+            center_x: self.parent.center_x
+            bottom_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Button: # hand bottom left
+        background_color: 0,0,0,0
+        size_hint: 0.07575757575,0.18518518518
+        pos_hint:{"right":0.0875}
+        Image:
+            id: hand_one
+            source: r"Images/card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            pos: self.parent.pos
+            stretch: True
+
+    Button: # hand bottom right
+        background_color: 0,0,0,0
+        size_hint: 0.07575757575,0.18518518518
+        pos_hint:{"right":0.175}
+        Image:
+            id: hand_two
+            source: r"Images/card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            pos: self.parent.pos
+            stretch: True
+
+
+
+    Button: # hand top left
+        background_color: 0,0,0,0
+        size_hint: 0.07575757575,0.18518518518
+        pos_hint:{"right":0.0875, "top":0.4}
+        Image:
+            id: hand_three
+            source: r"Images/card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
+
+    Button: # hand top right
+        background_color: 0,0,0,0
+        size_hint: 0.07575757575,0.18518518518
+        pos_hint:{"right":0.175, "top":0.4}
+        Image:
+            id: hand_four
+            source: r"Images/card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Button: # charecter
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.46556115308, "top":0.16394335511}
+        Image:
+            id: swordman
+            source: r"Images\Swords man.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: swordmanATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"1"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: swordmanHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"1"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: swordmanSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: swordmanCD
+            color: 0,0,0,1
+            text: "0"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # charecter
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.53122605363, "top":0.16394335511}
+        Image:
+            id: ion
+            source: r"Images\ion.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
+            Label:
+                id: ionATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"2"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: ionHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"2"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: ionSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"3"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: ionCD
+            color: 0,0,0,1
+            text: "1"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # charecter
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.596890955, "top":0.16394335511}
+        Image:
+            id: apex
+            source: r"Images\Apex.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: apexATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"3"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: apexHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"3"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: apexSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"2"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: apexCD
+            color: 0,0,0,1
+            text: "2"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # charecter
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.662555856, "top":0.16394335511}
+        Image:
+            id: blade
+            source: r"Images\Blade.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: bladeATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: bladeHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: bladeSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"2"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: bladeCD
+            color: 0,0,0,1
+            text: "3"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # charecter
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.48232323231, "top":0.08241041691}
+        Image:
+            id: tank
+            source: r"Images\tank.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: tankATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: tankHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: tankSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"3"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: tankCD
+            color: 0,0,0,1
+            text: "4"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # charecter
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.56414141413, "top":0.08241041691}
+        Image:
+            id: bomb
+            source: r"Images\spike bomb.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: bombATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"6"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: bombHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"6"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: bombSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"1"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: bombCD
+            color: 0,0,0,1
+            text: "5"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+    Button: # charecter
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.64595959595, "top":0.08241041691}
+        Image:
+            id: jolt
+            source: r"Images\New jolt.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
+            Label:
+                id: joltATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"5"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: joltHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"5"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: joltSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: joltCD
+            color: 0,0,0,1
+            text: "6"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+    
+    
+    
+    
+    
+    
+    Button: # core 1
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.22777777777, "top":0.06851851851}
+        Image:
+            id: core1
+            source: r"Images\card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Button: # core 2
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.22777777777, "top":0.12779588879}
+        Image:
+            id: core2
+            source: r"Images\card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Button: # core 3
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.22777777777, "top":0.18707325907}
+        Image:
+            id: core3
+            source: r"Images\card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Label:
+        id:end_turn
+        text: "END TURN"
+        text_size: self.size
+        pos: 0, self.height/2
+        font_size: self.width/24
+
+    Button: # Opponent
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.36319444443, "top":0.88236187006}
+        Image:
+            id: O_swordman
+            source: r"Images\Swords man.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: O_swordmanATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"1"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: O_swordmanHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"1"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: O_swordmanSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: O_swordmanCD
+            color: 0,0,0,1
+            text: "1"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # Opponent
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.42465277777, "top":0.88236187006}
+        Image:
+            id: O_ion
+            source: r"Images\ion.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
+            Label:
+                id: O_ionATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"2"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: O_ionHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"2"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: O_ionSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"3"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: O_ionCD
+            color: 0,0,0,1
+            text: "2"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # Opponent
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.4861111111, "top":0.88236187006}
+        Image:
+            id: O_apex
+            source: r"Images\Apex.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: O_apexATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"3"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: O_apexHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"3"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: O_apexSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"2"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: O_apexCD
+            color: 0,0,0,1
+            text: "3"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # Opponent
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.54756944443, "top":0.88236187006}
+        Image:
+            id: O_blade
+            source: r"Images\Blade.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: O_bladeATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: O_bladeHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: O_bladeSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"2"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: O_bladeCD
+            color: 0,0,0,1
+            text: "4"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # Opponent
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.37855902777, "top":0.96365166819}
+        Image:
+            id: O_tank
+            source: r"Images\tank.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: O_tankATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: O_tankHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: O_tankSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"3"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: O_tankCD
+            color: 0,0,0,1
+            text: "5"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+
+    Button: # Opponent
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.45538194443, "top":0.96365166819}
+        Image:
+            id: O_bomb
+            source: r"Images\spike bomb.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+            Label:
+                id: O_bombATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"6"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: O_bombHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"6"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: O_bombSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"1"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: O_bombCD
+            color: 0,0,0,1
+            text: "6"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+    Button: # Opponent
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.5322048611, "top":0.9636516681988236187006}
+        Image:
+            id: O_jolt
+            source: r"Images\New jolt.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
+            Label:
+                id: O_joltATK
+                color: 1,0,0,1
+                size: self.parent.size 
+                text:"5"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y
+            Label:
+                id: O_joltHP
+                color: 0,1,0,1
+                size: self.parent.size 
+                text:"5"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y - self.font_size
+            Label:
+                id: O_joltSPD
+                color: 0,0,0,1
+                size: self.parent.size 
+                text:"4"
+                font_size: self.size[1]/5.78703703625
+                center_x: self.parent.x + self.font_size
+                center_y: self.parent.center_y + self.font_size
+        Label:
+            id: O_joltCD
+            color: 0,0,0,1
+            text: "7"
+            font_size: self.parent.size[1]/1.8518518516
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y - self.parent.size[1]
+    
+    
+    
+    Button: # O_core 1
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.62777777777, "top":0.98714136671}
+        Image:
+            id: O_core1
+            source: r"Images\card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Button: # O_core 2
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.62777777777, "top":0.92779588879}
+        Image:
+            id: O_core2
+            source: r"Images\card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+
+    Button: # O_core 3
+        background_color: 0,0,0,0
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.62777777777, "top":0.86851851851}
+        Image:
+            id: O_core3
+            source: r"Images\card_sleeve.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+    
+    Button: # Player 1st health
+        background_color: 0,0,0,1
+        size_hint: 0.11111111111, 0.11111111111
+        pos_hint:{"right":0.91111111111, "top":0.33333333333}
+        Image:
+            id: H1
+            source: r"Images\Health.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+    Button: # Player 2nd health
+        background_color: 0,0,0,1
+        size_hint: 0.11111111111, 0.11111111111
+        pos_hint:{"right":0.91111111111, "top":0.22222222222}
+        Image:
+            id: H2
+            source: r"Images\Health.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True     
+    Button: # Player 3rd health
+        background_color: 0,0,0,1
+        size_hint: 0.11111111111, 0.11111111111
+        pos_hint:{"right":0.91111111111, "top":0.11111111111}
+        Image:
+            id: H3
+            source: r"Images\Health.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
+
+
+    Button: # Opponent 1st health
+        background_color: 0,0,0,1
+        size_hint: 0.11111111111, 0.11111111111
+        pos_hint:{"right":0.91111111111, "top":1}
+        Image:
+            id: O_H1
+            source: r"Images\Health.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
+    Button: # Opponent 2nd health
+        background_color: 0,0,0,1
+        size_hint: 0.11111111111, 0.11111111111
+        pos_hint:{"right":0.91111111111, "top":0.8888888888}
+        Image:
+            id: O_H2
+            source: r"Images\Health.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True     
+    Button: # Opponent 3rd health
+        background_color: 0,0,0,1
+        size_hint: 0.11111111111, 0.11111111111
+        pos_hint:{"right":0.91111111111, "top":0.77777777777}
+        Image:
+            id: O_H3
+            source: r"Images\Health.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
+
+    Button: # stage
+        background_color: 0,0,0,1
+        size_hint: 0.1, 0.2
+        pos_hint:{"right": 0.15, "top":1}
+        Label:
+            id: stage_label
+            color: 1,1,1,1
+            size: self.parent.size 
+            text:"STAGE:"
+
+            font_size: self.size[0]/4
+            font_color: 1,1,1,1
+            center_x: self.parent.x + self.font_size
+            center_y: self.parent.center_y
+
+    Button: # stage counter
+        background_color: 0,0,0,0
+        size_hint: 0.2, 0.2
+        pos_hint:{"right": 0.2, "top":0.9}
+        Label:
+            id: stage_counter
+            color: 1,1,1,1
+            size: self.parent.size 
+            text:"0"
+
+            font_size: self.size[0]/4
+            font_color: 1,1,1,1
+            center_x: self.parent.x + self.font_size
+            center_y: self.parent.center_y
+
+            
