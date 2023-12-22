@@ -35,21 +35,21 @@ class Charecter:
     
     
 
-attack = "+1 atk"
-attack2 = "+2 atk"
-attack3 = "+3 atk"
+attack = r"Images\+one attack.png"
+attack2 = r"Images\+two attack.png"
+attack3 = r"Images\+three attack.png"
 
-health = "+1 hp"
-health2 = "+2 hp"
-health3 = "+3 hp"
+health = r"Images\+one health.png"
+health2 = r"Images\+two health.png"
+health3 = r"Images\+three health.png"
 
-speed = "+1 spd"
-speed2 = "+2 spd" 
+speed = r"Images\+one speed.png"
+speed2 = r"Images\+two speed.png" 
 
-dec_cooldown = "-1 cooldown"
-dec_cooldown2 = "-2 cooldown"
-inc_cooldown = "+1 cooldown"
-inc_cooldown2 = "+2 cooldown"
+dec_cooldown = r"Images\-1 cooldown.png"
+dec_cooldown2 = r"Images\-2 cooldown.png"
+inc_cooldown = r"Images\+one cooldown.png"
+inc_cooldown2 = r"Images\+two cooldown.png"
 
 card_list = [attack, attack2, attack3, health, health2, health3, speed, speed2, attack, attack2, attack3, health, health2, health3, speed, speed2, dec_cooldown, inc_cooldown, dec_cooldown2, inc_cooldown2]
 player_cards = card_list.copy()
@@ -99,7 +99,7 @@ player.shuffle()
 
 
 global stage
-stage = 0
+stage = 1
 global player_life
 player_life = 3
 global opponent_life
@@ -132,7 +132,7 @@ global damage_recived
 damage_recived = 1
 
 #########################################################################################################################################
-swordman = Charecter(1, 1, 4, 0, "player", "Swordman")
+swordman = Charecter(1, 1, 4, 0, "player", r"Images\Swords man.png")
 global swordman_bool
 swordman_bool = False
 global swordman_battle
@@ -140,7 +140,7 @@ swordman_battle = False
 global swordman_index
 swordman_index = 9
 #########################################################################################################################################
-ion = Charecter(2, 2, 3, 1, "player", "Ion")
+ion = Charecter(2, 2, 3, 1, "player", r"Images\ion.png")
 global ion_bool
 ion_bool = False
 global ion_battle
@@ -148,7 +148,7 @@ ion_battle = False
 global ion_index
 ion_index = 9
 #########################################################################################################################################
-apex = Charecter(3, 3, 2, 2, "player", "Apex")
+apex = Charecter(3, 3, 2, 2, "player", r"Images\Apex.png")
 global apex_bool
 apex_bool = False
 global apex_battle
@@ -156,7 +156,7 @@ apex_battle = False
 global apex_index
 apex_index = 9
 #########################################################################################################################################
-blade = Charecter(4, 4, 2, 3, "player", "Blade")
+blade = Charecter(4, 4, 2, 3, "player", r"Images\Blade.png")
 global blade_bool
 blade_bool = False
 global blade_battle
@@ -164,7 +164,7 @@ blade_battle = False
 global blade_index
 blade_index = 9
 #########################################################################################################################################
-tank = Charecter(4, 4, 3, 4, "player", "Tank")
+tank = Charecter(4, 4, 3, 4, "player", r"Images\tank.png")
 global tank_bool
 tank_bool = False
 global tank_battle
@@ -172,7 +172,7 @@ tank_battle = False
 global tank_index
 tank_index = 9
 #########################################################################################################################################
-bomb = Charecter(6, 6, 1, 5, "player", "Bomb")
+bomb = Charecter(6, 6, 1, 5, "player", r"Images\spike bomb.png")
 global bomb_bool
 bomb_bool = False
 global bomb_batle
@@ -180,7 +180,7 @@ bomb_batle = False
 global bomb_index
 bomb_index = 9
 #########################################################################################################################################
-jolt = Charecter(5, 5, 4, 6, "player", "Jolt")
+jolt = Charecter(5, 5, 4, 6, "player", r"Images\New jolt.png")
 global jolt_bool
 jolt_bool = False
 global jolt_battle
@@ -189,43 +189,43 @@ global jolt_index
 jolt_index = 9
 
 #########################################################################################################################################
-O_swordman = Charecter(1, 1, 4, 1, "opponent", "Swordman")
+O_swordman = Charecter(1, 1, 4, 1, "opponent", r"Images\Swords man.png")
 global O_swordman_summon
 O_swordman_summon = False
 global O_swordman_index
 O_swordman_index = 9
 #########################################################################################################################################
-O_ion = Charecter(2, 2, 3, 2, "opponent", "Ion")
+O_ion = Charecter(2, 2, 3, 2, "opponent", r"Images\ion.png")
 global O_ion_summon
 O_ion_summon = False
 global O_ion_index
 O_ion_index = 9
 #########################################################################################################################################
-O_apex = Charecter(3, 3, 2, 3, "opponent", "Apex")
+O_apex = Charecter(3, 3, 2, 3, "opponent", r"Images\Apex.png")
 global O_apex_summon
 O_apex_summon = False
 global O_apex_index
 O_apex_index = 9
 #########################################################################################################################################
-O_blade = Charecter(4, 4, 2, 4, "opponent", "Blade")
+O_blade = Charecter(4, 4, 2, 4, "opponent", r"Images\Blade.png")
 global O_blade_summon
 O_blade_summon = False
 global O_blade_index
 O_blade_index = 9
 #########################################################################################################################################
-O_tank = Charecter(4, 4, 3, 5, "opponent", "Tank")
+O_tank = Charecter(4, 4, 3, 5, "opponent", r"Images\tank.png")
 global O_tank_summon
 O_tank_summon = False
 global O_tank_index
 O_tank_index = 9
 #########################################################################################################################################
-O_bomb = Charecter(6, 6, 1, 6, "opponent", "Bomb")
+O_bomb = Charecter(6, 6, 1, 6, "opponent", r"Images\spike bomb.png")
 global O_bombn_summon
 O_bomb_summon = False
 global O_bomb_index
 O_bomb_index = 9
 #########################################################################################################################################
-O_jolt = Charecter(5, 5, 4, 7, "opponent", "Jolt")
+O_jolt = Charecter(5, 5, 4, 7, "opponent", r"Images\New jolt.png")
 global O_jolt_summon
 O_jolt_summon = False
 global O_jolt_index
@@ -257,21 +257,21 @@ class game_board(FloatLayout):
             player.draw()
             draw_per_turn -= 1
             if player.stored[0] != "x":
-                self.ids.hand_one.text = player.stored[0]
+                self.ids.hand_one.source = player.stored[0]
             else:
-                self.ids.hand_one.text = "empty"
+                self.ids.hand_one.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
             if player.stored[1] != "x":
-                self.ids.hand_two.text = player.stored[1]
+                self.ids.hand_two.source = player.stored[1]
             else:
-                self.ids.hand_two.text = "empty"
+                self.ids.hand_two.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
             if player.stored[2] != "x":
-                self.ids.hand_three.text = player.stored[2]
+                self.ids.hand_three.source = player.stored[2]
             else:
-                self.ids.hand_three.text = "empty"
+                self.ids.hand_three.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
             if player.stored[3] != "x":
-                self.ids.hand_four.text = player.stored[3]
+                self.ids.hand_four.source = player.stored[3]
             else:
-                self.ids.hand_four.text = "empty"
+                self.ids.hand_four.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
 
         if self.ids.hand_one.pos[0] < touch.pos[0] and self.ids.hand_one.pos[0] + self.ids.hand_one.size[0] > touch.pos[0] and self.ids.hand_one.pos[1] < touch.pos[1] and self.ids.hand_one.pos[1] + self.ids.hand_one.size[1] > touch.pos[1]:
             global hand1
@@ -305,7 +305,7 @@ class game_board(FloatLayout):
             swordman_change_lane = False
             if swordman.spd > 0:
                 if swordman_index == 0 or swordman_index == 3 or swordman_index == 4 or swordman_index == 7:
-                    if self.ids.swordman.pos[0] < touch.pos[0] - self.ids.swordman.size[0] and self.ids.swordman.pos[0] + self.ids.swordman.size[0] > touch.pos[0] - self.ids.swordman.size[0]*2 and self.ids.swordman.pos[1] < touch.pos[1] and self.ids.swordman.pos[1] + self.ids.swordman.size[1] > touch.pos[1]:
+                    if self.ids.swordman.pos[0] < touch.pos[0] - self.ids.swordman.size[0] and self.ids.swordman.pos[0] + self.ids.swordman.size[0]/2 > touch.pos[0] - self.ids.swordman.size[0] and self.ids.swordman.pos[1] < touch.pos[1] and self.ids.swordman.pos[1] + self.ids.swordman.size[1] > touch.pos[1]:
                         swordman.did_change_lane = True
                         if swordman.lane == "left" or swordman.lane == "mid":
                             if swordman.lane == "mid":
@@ -333,7 +333,7 @@ class game_board(FloatLayout):
                             if swordman_change_lane == True:
                                 self.ids.swordman.pos[0] += ((Window.width/5+3*Window.width/5/2)-Window.width/1536) - ((Window.width/5+3*Window.width/5/5)-Window.width/1536)
                     
-                    elif self.ids.swordman.pos[0] + self.ids.swordman.size[0]/2 < touch.pos[0] + self.ids.swordman.size[0]*2 and self.ids.swordman.pos[0] + self.ids.swordman.size[0] > touch.pos[0] + self.ids.swordman.size[0] and self.ids.swordman.pos[1] < touch.pos[1] and self.ids.swordman.pos[1] + self.ids.swordman.size[1] > touch.pos[1]:
+                    elif self.ids.swordman.pos[0] + self.ids.swordman.size[0]/2 < touch.pos[0] + self.ids.swordman.size[0] and self.ids.swordman.pos[0] + self.ids.swordman.size[0] > touch.pos[0] + self.ids.swordman.size[0] and self.ids.swordman.pos[1] < touch.pos[1] and self.ids.swordman.pos[1] + self.ids.swordman.size[1] > touch.pos[1]:
                         swordman.did_change_lane = True
                         if swordman.lane == "right" or swordman.lane == "mid":
                             if swordman.lane == "mid":
@@ -467,7 +467,7 @@ class game_board(FloatLayout):
             ion_change_lane = False
             if ion.spd > 0:
                 if ion_index == 0 or ion_index == 3 or ion_index == 4 or ion_index == 7:
-                    if self.ids.ion.pos[0] < touch.pos[0] - self.ids.ion.size[0] and self.ids.ion.pos[0] + self.ids.ion.size[0]*2 > touch.pos[0] - self.ids.ion.size[0] and self.ids.ion.pos[1] < touch.pos[1] and self.ids.ion.pos[1] + self.ids.ion.size[1] > touch.pos[1]:
+                    if self.ids.ion.pos[0] < touch.pos[0] - self.ids.ion.size[0] and self.ids.ion.pos[0] + self.ids.ion.size[0]/2 > touch.pos[0] - self.ids.ion.size[0] and self.ids.ion.pos[1] < touch.pos[1] and self.ids.ion.pos[1] + self.ids.ion.size[1] > touch.pos[1]:
                         ion.did_change_lane = True
                         if ion.lane == "left" or ion.lane == "mid":
                             if ion.lane == "mid":
@@ -495,7 +495,7 @@ class game_board(FloatLayout):
                             if ion_change_lane == True:
                                 self.ids.ion.pos[0] += ((Window.width/5+3*Window.width/5/2)-Window.width/1536) - ((Window.width/5+3*Window.width/5/5)-Window.width/1536)
                     
-                    elif self.ids.ion.pos[0] + self.ids.ion.size[0]/2 < touch.pos[0] + self.ids.ion.size[0]*2 and self.ids.ion.pos[0] + self.ids.ion.size[0] > touch.pos[0] + self.ids.ion.size[0] and self.ids.ion.pos[1] < touch.pos[1] and self.ids.ion.pos[1] + self.ids.ion.size[1] > touch.pos[1]:
+                    elif self.ids.ion.pos[0] + self.ids.ion.size[0]/2 < touch.pos[0] + self.ids.ion.size[0] and self.ids.ion.pos[0] + self.ids.ion.size[0] > touch.pos[0] + self.ids.ion.size[0] and self.ids.ion.pos[1] < touch.pos[1] and self.ids.ion.pos[1] + self.ids.ion.size[1] > touch.pos[1]:
                         ion.did_change_lane = True
                         if ion.lane == "right" or ion.lane == "mid":
                             if ion.lane == "mid":
@@ -628,7 +628,7 @@ class game_board(FloatLayout):
             apex_change_lane = False
             if apex.spd > 0:
                 if apex_index == 0 or apex_index == 3 or apex_index == 4 or apex_index == 7:
-                    if self.ids.apex.pos[0] < touch.pos[0] - self.ids.apex.size[0] and self.ids.apex.pos[0] + self.ids.apex.size[0]*2 > touch.pos[0] - self.ids.apex.size[0] and self.ids.apex.pos[1] < touch.pos[1] and self.ids.apex.pos[1] + self.ids.apex.size[1] > touch.pos[1]:
+                    if self.ids.apex.pos[0] < touch.pos[0] - self.ids.apex.size[0] and self.ids.apex.pos[0] + self.ids.apex.size[0]/2 > touch.pos[0] - self.ids.apex.size[0] and self.ids.apex.pos[1] < touch.pos[1] and self.ids.apex.pos[1] + self.ids.apex.size[1] > touch.pos[1]:
                         apex.did_change_lane = True
                         if apex.lane == "left" or apex.lane == "mid":
                             if apex.lane == "mid":
@@ -656,7 +656,7 @@ class game_board(FloatLayout):
                             if apex_change_lane == True:
                                 self.ids.apex.pos[0] += ((Window.width/5+3*Window.width/5/2)-Window.width/1536) - ((Window.width/5+3*Window.width/5/5)-Window.width/1536)
                     
-                    elif self.ids.apex.pos[0] + self.ids.apex.size[0]/2 < touch.pos[0] + self.ids.apex.size[0]*2 and self.ids.apex.pos[0] + self.ids.apex.size[0] > touch.pos[0] + self.ids.apex.size[0] and self.ids.apex.pos[1] < touch.pos[1] and self.ids.apex.pos[1] + self.ids.apex.size[1] > touch.pos[1]:
+                    elif self.ids.apex.pos[0] + self.ids.apex.size[0]/2 < touch.pos[0] + self.ids.apex.size[0] and self.ids.apex.pos[0] + self.ids.apex.size[0] > touch.pos[0] + self.ids.apex.size[0] and self.ids.apex.pos[1] < touch.pos[1] and self.ids.apex.pos[1] + self.ids.apex.size[1] > touch.pos[1]:
                         apex.did_change_lane = True
                         if apex.lane == "right" or apex.lane == "mid":
                             if apex.lane == "mid":
@@ -790,7 +790,7 @@ class game_board(FloatLayout):
             blade_change_lane = False
             if blade.spd > 0:
                 if blade_index == 0 or blade_index == 3 or blade_index == 4 or blade_index == 7:
-                    if self.ids.blade.pos[0] < touch.pos[0] - self.ids.blade.size[0] and self.ids.blade.pos[0] + self.ids.blade.size[0]*2 > touch.pos[0] - self.ids.blade.size[0] and self.ids.blade.pos[1] < touch.pos[1] and self.ids.blade.pos[1] + self.ids.blade.size[1] > touch.pos[1]:
+                    if self.ids.blade.pos[0] < touch.pos[0] - self.ids.blade.size[0] and self.ids.blade.pos[0] + self.ids.blade.size[0]/2 > touch.pos[0] - self.ids.blade.size[0] and self.ids.blade.pos[1] < touch.pos[1] and self.ids.blade.pos[1] + self.ids.blade.size[1] > touch.pos[1]:
                         blade.did_change_lane = True
                         if blade.lane == "left" or blade.lane == "mid":
                             if blade.lane == "mid":
@@ -818,7 +818,7 @@ class game_board(FloatLayout):
                             if blade_change_lane == True:
                                 self.ids.blade.pos[0] += ((Window.width/5+3*Window.width/5/2)-Window.width/1536) - ((Window.width/5+3*Window.width/5/5)-Window.width/1536)
                     
-                    elif self.ids.blade.pos[0] + self.ids.blade.size[0]/2 < touch.pos[0] + self.ids.blade.size[0]*2 and self.ids.blade.pos[0] + self.ids.blade.size[0] > touch.pos[0] + self.ids.blade.size[0] and self.ids.blade.pos[1] < touch.pos[1] and self.ids.blade.pos[1] + self.ids.blade.size[1] > touch.pos[1]:
+                    elif self.ids.blade.pos[0] + self.ids.blade.size[0]/2 < touch.pos[0] + self.ids.blade.size[0] and self.ids.blade.pos[0] + self.ids.blade.size[0] > touch.pos[0] + self.ids.blade.size[0] and self.ids.blade.pos[1] < touch.pos[1] and self.ids.blade.pos[1] + self.ids.blade.size[1] > touch.pos[1]:
                         blade.did_change_lane = True
                         if blade.lane == "right" or blade.lane == "mid":
                             if blade.lane == "mid":
@@ -952,7 +952,7 @@ class game_board(FloatLayout):
             tank_change_lane = False
             if tank.spd > 0:
                 if tank_index == 0 or tank_index == 3 or tank_index == 4 or tank_index == 7:
-                    if self.ids.tank.pos[0] < touch.pos[0] - self.ids.tank.size[0] and self.ids.tank.pos[0] + self.ids.tank.size[0]*2 > touch.pos[0] - self.ids.tank.size[0] and self.ids.tank.pos[1] < touch.pos[1] and self.ids.tank.pos[1] + self.ids.tank.size[1] > touch.pos[1]:
+                    if self.ids.tank.pos[0] < touch.pos[0] - self.ids.tank.size[0] and self.ids.tank.pos[0] + self.ids.tank.size[0]/2 > touch.pos[0] - self.ids.tank.size[0] and self.ids.tank.pos[1] < touch.pos[1] and self.ids.tank.pos[1] + self.ids.tank.size[1] > touch.pos[1]:
                         tank.did_change_lane = True
                         if tank.lane == "left" or tank.lane == "mid":
                             if tank.lane == "mid":
@@ -980,7 +980,7 @@ class game_board(FloatLayout):
                             if tank_change_lane == True:
                                 self.ids.tank.pos[0] += ((Window.width/5+3*Window.width/5/2)-Window.width/1536) - ((Window.width/5+3*Window.width/5/5)-Window.width/1536)
                     
-                    elif self.ids.tank.pos[0] + self.ids.tank.size[0]/2 < touch.pos[0] + self.ids.tank.size[0]*2 and self.ids.tank.pos[0] + self.ids.tank.size[0] > touch.pos[0] + self.ids.tank.size[0] and self.ids.tank.pos[1] < touch.pos[1] and self.ids.tank.pos[1] + self.ids.tank.size[1] > touch.pos[1]:
+                    elif self.ids.tank.pos[0] + self.ids.tank.size[0]/2 < touch.pos[0] + self.ids.tank.size[0] and self.ids.tank.pos[0] + self.ids.tank.size[0] > touch.pos[0] + self.ids.tank.size[0] and self.ids.tank.pos[1] < touch.pos[1] and self.ids.tank.pos[1] + self.ids.tank.size[1] > touch.pos[1]:
                         tank.did_change_lane = True
                         if tank.lane == "right" or tank.lane == "mid":
                             if tank.lane == "mid":
@@ -1114,7 +1114,7 @@ class game_board(FloatLayout):
             bomb_change_lane = False
             if bomb.spd > 0:
                 if bomb_index == 0 or bomb_index == 3 or bomb_index == 4 or bomb_index == 7:
-                    if self.ids.bomb.pos[0] < touch.pos[0] - self.ids.bomb.size[0] and self.ids.bomb.pos[0] + self.ids.bomb.size[0]*2 > touch.pos[0] - self.ids.bomb.size[0] and self.ids.bomb.pos[1] < touch.pos[1] and self.ids.bomb.pos[1] + self.ids.bomb.size[1] > touch.pos[1]:
+                    if self.ids.bomb.pos[0] < touch.pos[0] - self.ids.bomb.size[0] and self.ids.bomb.pos[0] + self.ids.bomb.size[0]/2 > touch.pos[0] - self.ids.bomb.size[0] and self.ids.bomb.pos[1] < touch.pos[1] and self.ids.bomb.pos[1] + self.ids.bomb.size[1] > touch.pos[1]:
                         bomb.did_change_lane = True
                         if bomb.lane == "left" or bomb.lane == "mid":
                             if bomb.lane == "mid":
@@ -1142,7 +1142,7 @@ class game_board(FloatLayout):
                             if bomb_change_lane == True:
                                 self.ids.bomb.pos[0] += ((Window.width/5+3*Window.width/5/2)-Window.width/1536) - ((Window.width/5+3*Window.width/5/5)-Window.width/1536)
                     
-                    elif self.ids.bomb.pos[0] + self.ids.bomb.size[0]/2 < touch.pos[0] + self.ids.bomb.size[0]*2 and self.ids.bomb.pos[0] + self.ids.bomb.size[0] > touch.pos[0] + self.ids.bomb.size[0] and self.ids.bomb.pos[1] < touch.pos[1] and self.ids.bomb.pos[1] + self.ids.bomb.size[1] > touch.pos[1]:
+                    elif self.ids.bomb.pos[0] + self.ids.bomb.size[0]/2 < touch.pos[0] + self.ids.bomb.size[0] and self.ids.bomb.pos[0] + self.ids.bomb.size[0] > touch.pos[0] + self.ids.bomb.size[0] and self.ids.bomb.pos[1] < touch.pos[1] and self.ids.bomb.pos[1] + self.ids.bomb.size[1] > touch.pos[1]:
                         bomb.did_change_lane = True
                         if bomb.lane == "right" or bomb.lane == "mid":
                             if bomb.lane == "mid":
@@ -1276,7 +1276,7 @@ class game_board(FloatLayout):
             jolt_change_lane = False
             if jolt.spd > 0:
                 if jolt_index == 0 or jolt_index == 3 or jolt_index == 4 or jolt_index == 7:
-                    if self.ids.jolt.pos[0] < touch.pos[0] - self.ids.jolt.size[0] and self.ids.jolt.pos[0] + self.ids.jolt.size[0]*2 > touch.pos[0] - self.ids.jolt.size[0] and self.ids.jolt.pos[1] < touch.pos[1] and self.ids.jolt.pos[1] + self.ids.jolt.size[1] > touch.pos[1]:
+                    if self.ids.jolt.pos[0] < touch.pos[0] - self.ids.jolt.size[0] and self.ids.jolt.pos[0] + self.ids.jolt.size[0]/2 > touch.pos[0] - self.ids.jolt.size[0] and self.ids.jolt.pos[1] < touch.pos[1] and self.ids.jolt.pos[1] + self.ids.jolt.size[1] > touch.pos[1]:
                         jolt.did_change_lane = True
                         if jolt.lane == "left" or jolt.lane == "mid":
                             if jolt.lane == "mid":
@@ -1304,7 +1304,7 @@ class game_board(FloatLayout):
                             if jolt_change_lane == True:
                                 self.ids.jolt.pos[0] += ((Window.width/5+3*Window.width/5/2)-Window.width/1536) - ((Window.width/5+3*Window.width/5/5)-Window.width/1536)
                     
-                    elif self.ids.jolt.pos[0] + self.ids.jolt.size[0]/2 < touch.pos[0] + self.ids.jolt.size[0]*2 and self.ids.jolt.pos[0] + self.ids.jolt.size[0] > touch.pos[0] + self.ids.jolt.size[0] and self.ids.jolt.pos[1] < touch.pos[1] and self.ids.jolt.pos[1] + self.ids.jolt.size[1] > touch.pos[1]:
+                    elif self.ids.jolt.pos[0] + self.ids.jolt.size[0]/2 < touch.pos[0] + self.ids.jolt.size[0] and self.ids.jolt.pos[0] + self.ids.jolt.size[0] > touch.pos[0] + self.ids.jolt.size[0] and self.ids.jolt.pos[1] < touch.pos[1] and self.ids.jolt.pos[1] + self.ids.jolt.size[1] > touch.pos[1]:
                         jolt.did_change_lane = True
                         if jolt.lane == "right" or jolt.lane == "mid":
                             if jolt.lane == "mid":
@@ -1489,30 +1489,30 @@ class game_board(FloatLayout):
         spd_inc = 0
 
         if hand1 == True:
-            if player.stored[0] == "+1 atk":
+            if player.stored[0] == r"Images\+one attack.png":
                 atk_inc = 1
-            if player.stored[0] == "+2 atk":
+            if player.stored[0] == r"Images\+two attack.png":
                 atk_inc = 2
-            if player.stored[0] == "+3 atk":
+            if player.stored[0] == r"Images\+three attack.png":
                 atk_inc = 3
 
-            if player.stored[0] == "+1 hp":
+            if player.stored[0] == r"Images\+one health.png":
                 hp_inc = 1
-            if player.stored[0] == "+2 hp":
+            if player.stored[0] == r"Images\+two health.png":
                 hp_inc = 2
-            if player.stored[0] == "+3 hp":
+            if player.stored[0] == r"Images\+three health.png":
                 hp_inc = 3
             
-            if player.stored[0] == "+1 spd":
+            if player.stored[0] == r"Images\+one speed.png":
                 spd_inc = 1
-            if player.stored[0] == "+2 spd":
+            if player.stored[0] == r"Images\+two speed.png":
                 spd_inc = 2
 
-            if player.stored[0] == "-1 cooldown":
+            if player.stored[0] == r"Images\-1 cooldown.png":
                 for row in rest_spot:
                     if row.cd > 0:
                         row.cd -= 1
-            if player.stored[0] == "-2 cooldown":
+            if player.stored[0] == r"Images\-2 cooldown.png":
                 for row in rest_spot:
                     if row.cd > 0:
                         row.cd -= 1
@@ -1520,41 +1520,41 @@ class game_board(FloatLayout):
                     if row.cd > 0:
                         row.cd -= 1
                 
-            if player.stored[0] == "+1 cooldown":
+            if player.stored[0] == r"Images\+one cooldown.png":
                 for row in O_rest_spot:
                     row.cd += 1
-            if player.stored[0] == "+2 cooldown":
+            if player.stored[0] == r"Images\+two cooldown.png":
                 for row in O_rest_spot:
                     row.cd += 2
 
             player.use_card(player.stored[0])
-            self.ids.hand_one.text = "empty"
+            self.ids.hand_one.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
             hand1 = False
         if hand2 == True:
-            if player.stored[1] == "+1 atk":
+            if player.stored[1] == r"Images\+one attack.png":
                 atk_inc = 1
-            if player.stored[1] == "+2 atk":
+            if player.stored[1] == r"Images\+two attack.png":
                 atk_inc = 2
-            if player.stored[1] == "+3 atk":
+            if player.stored[1] == r"Images\+three attack.png":
                 atk_inc = 3
 
-            if player.stored[1] == "+1 hp":
+            if player.stored[1] == r"Images\+one health.png":
                 hp_inc = 1
-            if player.stored[1] == "+2 hp":
+            if player.stored[1] == r"Images\+two health.png":
                 hp_inc = 2
-            if player.stored[1] == "+3 hp":
+            if player.stored[1] == r"Images\+three health.png":
                 hp_inc = 3
             
-            if player.stored[1] == "+1 spd":
+            if player.stored[1] == r"Images\+one speed.png":
                 spd_inc = 1
-            if player.stored[1] == "+2 spd":
+            if player.stored[1] == r"Images\+two speed.png":
                 spd_inc = 2
 
-            if player.stored[1] == "-1 cooldown":
+            if player.stored[1] == r"Images\-1 cooldown.png":
                 for row in rest_spot:
                     if row.cd > 0:
                         row.cd -= 1
-            if player.stored[1] == "-2 cooldown":
+            if player.stored[1] == r"Images\-2 cooldown.png":
                 for row in rest_spot:
                     if row.cd > 0:
                         row.cd -= 1
@@ -1562,41 +1562,41 @@ class game_board(FloatLayout):
                     if row.cd > 0:
                         row.cd -= 1
                 
-            if player.stored[1] == "+1 cooldown":
+            if player.stored[1] == r"Images\+one cooldown.png":
                 for row in O_rest_spot:
                     row.cd += 1
-            if player.stored[1] == "+2 cooldown":
+            if player.stored[1] == r"Images\+two cooldown.png":
                 for row in O_rest_spot:
                     row.cd += 2
     
             player.use_card(player.stored[1])
-            self.ids.hand_two.text = "empty"
+            self.ids.hand_two.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
             hand2 = False
         if hand3 == True:
-            if player.stored[2] == "+1 atk":
+            if player.stored[2] == r"Images\+one attack.png":
                 atk_inc = 1
-            if player.stored[2] == "+2 atk":
+            if player.stored[2] == r"Images\+two attack.png":
                 atk_inc = 2
-            if player.stored[2] == "+3 atk":
+            if player.stored[2] == r"Images\+three attack.png":
                 atk_inc = 3
 
-            if player.stored[2] == "+1 hp":
+            if player.stored[2] == r"Images\+one health.png":
                 hp_inc = 1
-            if player.stored[2] == "+2 hp":
+            if player.stored[2] == r"Images\+two health.png":
                 hp_inc = 2
-            if player.stored[2] == "+3 hp":
+            if player.stored[2] == r"Images\+three health.png":
                 hp_inc = 3
             
-            if player.stored[2] == "+1 spd":
+            if player.stored[2] == r"Images\+one speed.png":
                 spd_inc = 1
-            if player.stored[2] == "+2 spd":
+            if player.stored[2] == r"Images\+two speed.png":
                 spd_inc = 2
 
-            if player.stored[2] == "-1 cooldown":
+            if player.stored[2] == r"Images\-1 cooldown.png":
                 for row in rest_spot:
                     if row.cd > 0:
                         row.cd -= 1
-            if player.stored[2] == "-2 cooldown":
+            if player.stored[2] == r"Images\-2 cooldown.png":
                 for row in rest_spot:
                     if row.cd > 0:
                         row.cd -= 1
@@ -1604,41 +1604,41 @@ class game_board(FloatLayout):
                     if row.cd > 0:
                         row.cd -= 1
                 
-            if player.stored[2] == "+1 cooldown":
+            if player.stored[2] == r"Images\+one cooldown.png":
                 for row in O_rest_spot:
                     row.cd += 1
-            if player.stored[2] == "+2 cooldown":
+            if player.stored[2] == r"Images\+two cooldown.png":
                 for row in O_rest_spot:
                     row.cd += 2
 
             player.use_card(player.stored[2])
-            self.ids.hand_three.text = "empty"
+            self.ids.hand_three.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
             hand3 = False
         if hand4 == True:
-            if player.stored[3] == "+1 atk":
+            if player.stored[3] == r"Images\+one attack.png":
                 atk_inc = 1
-            if player.stored[3] == "+2 atk":
+            if player.stored[3] == r"Images\+two attack.png":
                 atk_inc = 2
-            if player.stored[3] == "+3 atk":
+            if player.stored[3] == r"Images\+three attack.png":
                 atk_inc = 3
 
-            if player.stored[3] == "+1 hp":
+            if player.stored[3] == r"Images\+one health.png":
                 hp_inc = 1
-            if player.stored[3] == "+2 hp":
+            if player.stored[3] == r"Images\+two health.png":
                 hp_inc = 2
-            if player.stored[3] == "+3 hp":
+            if player.stored[3] == r"Images\+three health.png":
                 hp_inc = 3
             
-            if player.stored[3] == "+1 spd":
+            if player.stored[3] == r"Images\+one speed.png":
                 spd_inc = 1
-            if player.stored[3] == "+2 spd":
+            if player.stored[3] == r"Images\+two speed.png":
                 spd_inc = 2
 
-            if player.stored[3] == "-1 cooldown":
+            if player.stored[3] == r"Images\-1 cooldown.png":
                 for row in rest_spot:
                     if row.cd > 0:
                         row.cd -= 1
-            if player.stored[3] == "-2 cooldown":
+            if player.stored[3] == r"Images\-2 cooldown.png":
                 for row in rest_spot:
                     if row.cd > 0:
                         row.cd -= 1
@@ -1646,15 +1646,15 @@ class game_board(FloatLayout):
                     if row.cd > 0:
                         row.cd -= 1
                 
-            if player.stored[3] == "+1 cooldown":
+            if player.stored[3] == r"Images\+one cooldown.png":
                 for row in O_rest_spot:
                     row.cd += 1
-            if player.stored[3] == "+2 cooldown":
+            if player.stored[3] == r"Images\+two cooldown.png":
                 for row in O_rest_spot:
                     row.cd += 2
 
             player.use_card(player.stored[3])
-            self.ids.hand_four.text = "empty"
+            self.ids.hand_four.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
             hand4 = False
 
         if swordman.cd >= 0:
@@ -1764,7 +1764,6 @@ class game_board(FloatLayout):
 # O_swordman
             global O_swordman_summon
             global O_swordman_index
-
             O_swordman.spd = O_swordman.original_spd
             if O_swordman.cd <= 0:
                 for row in left_lane:
@@ -1832,6 +1831,7 @@ class game_board(FloatLayout):
 # O_ion
             global O_ion_summon
             global O_ion_index
+            # print(O_ion_index)
             O_ion.spd = O_ion.original_spd
             if O_ion.cd <= 0:
                 for row in left_lane:
@@ -2765,32 +2765,32 @@ class game_board(FloatLayout):
 #########################################################################################################################################
 # show cards in core
         if core[0] != "x":
-            self.ids.core1.text = core[0].source
+            self.ids.core1.source = core[0].source
         else:
-            self.ids.core1.text = "empty"
+            self.ids.core1.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
         if core[1] != "x":
-            self.ids.core2.text = core[1].source
+            self.ids.core2.source = core[1].source
         else:
-            self.ids.core2.text = "empty"
+            self.ids.core2.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
         if core[2] != "x":
-            self.ids.core3.text = core[2].source
+            self.ids.core3.source = core[2].source
         else:
-            self.ids.core3.text = "empty"
+            self.ids.core3.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
 
 #########################################################################################################################################
 # show enemy cards in core
         if O_core[0] != "x":
-            self.ids.O_core1.text = O_core[0].source
+            self.ids.O_core1.source = O_core[0].source
         else:
-            self.ids.O_core1.text = "empty"
+            self.ids.O_core1.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
         if O_core[1] != "x":
-            self.ids.O_core2.text = O_core[1].source
+            self.ids.O_core2.source = O_core[1].source
         else:
-            self.ids.O_core2.text = "empty"
+            self.ids.O_core2.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
         if O_core[2] != "x":
-            self.ids.O_core3.text = O_core[2].source
+            self.ids.O_core3.source = O_core[2].source
         else:
-            self.ids.O_core3.text = "empty"
+            self.ids.O_core3.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
                     
 
 # lose
@@ -2816,7 +2816,6 @@ class game_board(FloatLayout):
             self.ids.H2.pos = Window.width/1.09756097561 - self.ids.H2.size[0], self.ids.H2.size[1] 
             global stage
             stage = 0
-            self.ids.stage_counter.text = str(stage)
             for row in opponent_list:
                 row.atk = row.original_atk_stage_0 
                 row.hp = row.original_hp_stage_0 
@@ -2858,10 +2857,10 @@ class game_board(FloatLayout):
             if player.stored[3] != "x":
                 player.use_card(player.stored[3])
             player.shuffle()
-            self.ids.hand_one.text = "empty"
-            self.ids.hand_two.text = "empty"
-            self.ids.hand_three.text = "empty"
-            self.ids.hand_four.text = "empty"
+            self.ids.hand_one.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.hand_two.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.hand_three.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.hand_four.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
 
             swordman_bool = False
             swordman_index = 9
@@ -2936,23 +2935,25 @@ class game_board(FloatLayout):
             O_jolt_index =  9 
             self.ids.O_jolt.pos = (Window.width/5+3*Window.width/5/6)+Window.width/4.89171974522 , Window.height-Window.height/12.1
 
-            self.ids.core1.text = "empty"
-            self.ids.core2.text = "empty"
-            self.ids.core3.text = "empty"
+            self.ids.core1.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.core2.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.core3.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
 
-            self.ids.O_core1.text = "empty"
-            self.ids.O_core2.text = "empty"
-            self.ids.O_core3.text = "empty"
+            self.ids.O_core1.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.O_core2.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.O_core3.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
 
             Game_Over = Label(text="[b][color=ff3333]Game Over[/color][/b]", font_size=Window.width/10, markup = True)
             Game_Over.pos_hint = {'center_x': 0.5, 'center_y': 0.5}
             self.add_widget(Game_Over)
 
+
             for row in opponent_list:
                 row.alive = True
             for row in player_list:
                 row.alive = True
-            Clock.schedule_once(lambda dt: self.remove_widget(Game_Over), 2)
+            Clock.schedule_once(lambda dt: self.remove_widget(Game_Over), 3)
+            Clock.schedule_once(lambda dt: App.get_running_app().stop(), 3)
 
 # win 
         global opponent_life
@@ -3013,10 +3014,10 @@ class game_board(FloatLayout):
             if player.stored[3] != "x":
                 player.use_card(player.stored[3])
             player.shuffle()
-            self.ids.hand_one.text = "empty"
-            self.ids.hand_two.text = "empty"
-            self.ids.hand_three.text = "empty"
-            self.ids.hand_four.text = "empty"
+            self.ids.hand_one.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.hand_two.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.hand_three.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.hand_four.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
 
 
 
@@ -3093,13 +3094,13 @@ class game_board(FloatLayout):
             O_jolt_index = 9
             self.ids.O_jolt.pos = (Window.width/5+3*Window.width/5/6)+Window.width/4.89171974522 , Window.height-Window.height/12.1
 
-            self.ids.core1.text = "empty"
-            self.ids.core2.text = "empty"
-            self.ids.core3.text = "empty"
+            self.ids.core1.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.core2.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.core3.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
 
-            self.ids.O_core1.text = "empty"
-            self.ids.O_core2.text = "empty"
-            self.ids.O_core3.text = "empty"
+            self.ids.O_core1.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.O_core2.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
+            self.ids.O_core3.source = r"C:\Users\salam\OneDrive\Desktop\Visual studio\Images\card_sleeve.png"
 
             
 
@@ -3160,13 +3161,13 @@ class game_board(FloatLayout):
 
 
 
-class mainApp(App):
+class with_pic_mainApp(App):
     def build(self):
         self.width = Window.width
         self.height = Window.height
         return game_board()
 
 if __name__ == '__main__':
-    mainApp().run()
+    with_pic_mainApp().run()
 
 

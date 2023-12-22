@@ -457,53 +457,56 @@
             stretch: True 
 
     Button: # hand bottom left
-        background_color: 0,0,0,1
+        background_color: 0,0,0,0
         size_hint: 0.07575757575,0.18518518518
         pos_hint:{"right":0.0875}
-        Label:
+        Image:
             id: hand_one
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images/card_sleeve.png"
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            pos: self.parent.pos
+            stretch: True
 
     Button: # hand bottom right
         background_color: 0,0,0,0
         size_hint: 0.07575757575,0.18518518518
         pos_hint:{"right":0.175}
-        Label:
+        Image:
             id: hand_two
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images/card_sleeve.png"
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            pos: self.parent.pos
+            stretch: True
+
 
 
     Button: # hand top left
         background_color: 0,0,0,0
         size_hint: 0.07575757575,0.18518518518
         pos_hint:{"right":0.0875, "top":0.4}
-        Label:
+        Image:
             id: hand_three
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images/card_sleeve.png"
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
 
     Button: # hand top right
         background_color: 0,0,0,0
         size_hint: 0.07575757575,0.18518518518
         pos_hint:{"right":0.175, "top":0.4}
-        Label:
+        Image:
             id: hand_four
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images/card_sleeve.png"
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
 
     Button: # charecter
         background_color: 0,0,0,0
@@ -547,12 +550,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Swordman"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
 
     Button: # charecter
         background_color: 0,0,0,0
@@ -596,13 +593,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Ion"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
-
 
     Button: # charecter
         background_color: 0,0,0,0
@@ -646,12 +636,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Apex"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
 
     Button: # charecter
         background_color: 0,0,0,0
@@ -695,12 +679,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Blade"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/6
 
     Button: # charecter
         background_color: 0,0,0,0
@@ -744,12 +722,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Tank"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
 
     Button: # charecter
         background_color: 0,0,0,0
@@ -793,13 +765,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Bomb"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
-
     Button: # charecter
         background_color: 0,0,0,0
         size_hint: 0.02777777777, 0.04629629629
@@ -842,12 +807,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Jolt"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
     
     
     
@@ -856,39 +815,39 @@
     
     Button: # core 1
         background_color: 0,0,0,0
-        size_hint: 0.2, 0.04629629629
-        pos_hint:{"right":0.4, "top":0.06851851851}
-        Label:
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.22777777777, "top":0.06851851851}
+        Image:
             id: core1
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images\card_sleeve.png"
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
 
     Button: # core 2
         background_color: 0,0,0,0
-        size_hint: 0.2, 0.04629629629
-        pos_hint:{"right":0.4, "top":0.12779588879}
-        Label:
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.22777777777, "top":0.12779588879}
+        Image:
             id: core2
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images\card_sleeve.png"
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
 
     Button: # core 3
         background_color: 0,0,0,0
-        size_hint: 0.2, 0.04629629629
-        pos_hint:{"right":0.4, "top":0.18707325907}
-        Label:
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.22777777777, "top":0.18707325907}
+        Image:
             id: core3
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images\card_sleeve.png"
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
 
     Label:
         id:end_turn
@@ -939,12 +898,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Swordman"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
 
     Button: # Opponent
         background_color: 0,0,0,0
@@ -988,12 +941,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Ion"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
 
     Button: # Opponent
         background_color: 0,0,0,0
@@ -1037,12 +984,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Apex"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
 
     Button: # Opponent
         background_color: 0,0,0,0
@@ -1086,12 +1027,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Blade"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
 
     Button: # Opponent
         background_color: 0,0,0,0
@@ -1135,12 +1070,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Tank"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
 
     Button: # Opponent
         background_color: 0,0,0,0
@@ -1184,13 +1113,6 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Bomb"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
-
     Button: # Opponent
         background_color: 0,0,0,0
         size_hint: 0.02777777777, 0.04629629629
@@ -1233,49 +1155,44 @@
             font_size: self.parent.size[1]/1.8518518516
             center_x: self.parent.center_x
             center_y: self.parent.center_y - self.parent.size[1]
-        Label:
-            color: 0,0,0,1
-            text: "Jolt"
-            font_size: self.parent.size[0]/4
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y - self.parent.size[1] + self.size[1]/5
+    
     
     
     Button: # O_core 1
         background_color: 0,0,0,0
-        size_hint: 0.2, 0.04629629629
-        pos_hint:{"right":0.8, "top":0.98714136671}
-        Label:
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.62777777777, "top":0.98714136671}
+        Image:
             id: O_core1
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images\card_sleeve.png"
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
 
     Button: # O_core 2
         background_color: 0,0,0,0
-        size_hint: 0.2, 0.04629629629
-        pos_hint:{"right":0.8, "top":0.92779588879}
-        Label:
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.62777777777, "top":0.92779588879}
+        Image:
             id: O_core2
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images\card_sleeve.png"
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
 
     Button: # O_core 3
         background_color: 0,0,0,0
-        size_hint: 0.2, 0.04629629629
-        pos_hint:{"right":0.8, "top":0.86851851851}
-        Label:
+        size_hint: 0.02777777777, 0.04629629629
+        pos_hint:{"right":0.62777777777, "top":0.86851851851}
+        Image:
             id: O_core3
-            color: 1,1,1,1
-            text: "empty"
-            font_size: self.parent.size[0]/5
+            source: r"Images\card_sleeve.png"
             center_x: self.parent.center_x
-            center_y: self.parent.center_y 
+            center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True 
     
     Button: # Player 1st health
         background_color: 0,0,0,1
